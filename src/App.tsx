@@ -9,6 +9,7 @@ import VotingInfoPage from "./pages/VotingInfoPage";
 import CandidateDetailPage from "./pages/CandidateDetailPage";
 import CandidateComparePage from "./pages/CandidateComparePage";
 import ScrollToTop from "./components/utils/ScrollToTop";
+import { Analytics } from "@vercel/analytics/react";
 
 // QueryClient 설정
 const queryClient = new QueryClient({
@@ -25,6 +26,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <Router>
         <ScrollToTop />
+        <Analytics />
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow">
