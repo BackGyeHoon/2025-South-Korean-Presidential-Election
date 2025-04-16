@@ -20,8 +20,17 @@ const CandidateComparePage = () => {
   // 선택된 정책 카테고리 (예: 경제, 복지, 교육 등)
   const [selectedCategory, setSelectedCategory] = useState("economy");
 
-  // 모달 표시 여부
+  // 두 번째 후보자 선택 시 확인 모달 상태
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [candidateToConfirm, setCandidateToConfirm] = useState<string | null>(
+    null
+  );
+
+  // 비교 결과 모달 상태
+  const [isCompareModalOpen, setIsCompareModalOpen] = useState(false);
+
+  // 추가 후보자 선택 중 상태
+  const [selectingAdditional, setSelectingAdditional] = useState(false);
 
   // 컴포넌트 마운트 시 후보자 순서를 랜덤으로 섞음
   useEffect(() => {
@@ -29,14 +38,15 @@ const CandidateComparePage = () => {
     setRandomizedCandidates(shuffled);
   }, []);
 
-  // 선택된 후보자가 2명 이상이면 모달 열기
+  // 선택된 후보자가 2명 이상이면 비교 모달 열기
   useEffect(() => {
-    if (selectedCandidates.length >= 2) {
-      setIsModalOpen(true);
+    // selectingAdditional이 true인 경우 모달을 열지 않음
+    if (selectedCandidates.length >= 2 && !selectingAdditional) {
+      setIsCompareModalOpen(true);
     } else {
-      setIsModalOpen(false);
+      setIsCompareModalOpen(false);
     }
-  }, [selectedCandidates]);
+  }, [selectedCandidates, selectingAdditional]);
 
   // 모든 카테고리 목록
   const categories = CANDIDATES[0].categories.map((cat) => ({
@@ -46,18 +56,56 @@ const CandidateComparePage = () => {
 
   // 후보자 선택/해제 토글 함수
   const toggleCandidateSelection = (candidateId: string) => {
-    if (selectedCandidates.includes(candidateId)) {
+    const isSelected = selectedCandidates.includes(candidateId);
+
+    if (isSelected) {
       setSelectedCandidates(
         selectedCandidates.filter((id) => id !== candidateId)
       );
     } else {
-      if (selectedCandidates.length < 3) {
+      if (selectedCandidates.length === 1 && !selectingAdditional) {
+        // 두 번째 후보 선택 시 모달 열기 (단, 추가 선택 모드가 아닌 경우)
+        setCandidateToConfirm(candidateId);
+        setIsModalOpen(true);
+      } else if (selectedCandidates.length < 3) {
+        // 첫 번째 또는 세 번째 후보 선택 시 바로 추가
         setSelectedCandidates([...selectedCandidates, candidateId]);
+
+        // 세 번째 후보자를 선택하면 추가 선택 모드 비활성화
+        if (selectedCandidates.length === 2 && selectingAdditional) {
+          setSelectingAdditional(false);
+        }
       } else {
-        // 3명 이상이면 첫 번째 선택을 제거하고 새 후보자 추가 (선입선출)
+        // 이미 3명 선택됨 (선입선출)
         setSelectedCandidates([...selectedCandidates.slice(1), candidateId]);
       }
     }
+  };
+
+  // 두 명만 비교하기 선택 시
+  const handleCompareTwoCandidates = () => {
+    if (candidateToConfirm) {
+      setSelectedCandidates([selectedCandidates[0], candidateToConfirm]);
+      setIsModalOpen(false);
+      setCandidateToConfirm(null);
+      setSelectingAdditional(false); // 선택 추가 모드 아님
+    }
+  };
+
+  // 세 명 비교하기 선택 시
+  const handleCompareThreeCandidates = () => {
+    if (candidateToConfirm) {
+      setSelectedCandidates([...selectedCandidates, candidateToConfirm]);
+      setIsModalOpen(false);
+      setCandidateToConfirm(null);
+      setSelectingAdditional(true); // 선택 추가 모드 활성화
+    }
+  };
+
+  // 모달 취소 시
+  const handleCancelModal = () => {
+    setIsModalOpen(false);
+    setCandidateToConfirm(null);
   };
 
   // 선택된 후보자 정보 가져오기
@@ -272,7 +320,7 @@ const CandidateComparePage = () => {
   const comparisonResults = comparePledges(selectedCategory);
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto p-4 md:p-8">
       <div className="mb-10">
         <h1 className="text-3xl font-bold mb-4">후보자 공약 비교</h1>
         <p className="text-text-light mb-6">
@@ -362,118 +410,166 @@ const CandidateComparePage = () => {
         </Button>
       </div>
 
-      {/* 모달 비교 패널 */}
-      <div
-        className={`fixed inset-x-0 bottom-0 z-50 transform transition-transform duration-300 ease-in-out ${
-          isModalOpen ? "translate-y-0" : "translate-y-full"
-        }`}
-      >
-        <div className="bg-white border-t border-gray-200 shadow-[0_-4px_10px_rgba(0,0,0,0.1)] rounded-t-xl max-h-[80vh] overflow-y-auto">
-          {/* 모달 헤더 */}
-          <div className="sticky top-0 bg-white border-b border-gray-100 px-4 py-3 flex items-center justify-between z-10">
-            <div>
-              <div className="w-12 h-1 bg-gray-300 rounded-full mx-auto mb-4"></div>
-              <h2 className="text-xl font-semibold">
-                {compareMode === "common" ? "공통 공약" : "서로 다른 공약"}
-              </h2>
-            </div>
-            <div className="flex items-center gap-2">
-              <Button
-                variant="ghost"
-                size="sm"
-                className="text-gray-500"
-                onClick={() => setIsModalOpen(false)}
-              >
-                닫기
-              </Button>
+      {/* 후보자 추가 확인 모달 */}
+      {isModalOpen && (
+        <>
+          {/* 배경 오버레이 */}
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center"
+            onClick={handleCancelModal}
+          >
+            {/* 모달 창 */}
+            <div
+              className="bg-white rounded-lg p-6 max-w-md w-full mx-4 shadow-xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h3 className="text-xl font-semibold mb-4">후보자 비교 옵션</h3>
+              <p className="text-gray-600 mb-6">
+                선택된 두 명의 후보자를 비교하시겠습니까, 아니면 한 명의
+                후보자를 더 추가하여 세 명을 비교하시겠습니까?
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-end">
+                <Button
+                  variant="outline"
+                  onClick={handleCancelModal}
+                  className="order-3 sm:order-1"
+                >
+                  취소
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={handleCompareTwoCandidates}
+                  className="order-2"
+                >
+                  2명 비교하기
+                </Button>
+                <Button
+                  variant="taeguk"
+                  onClick={handleCompareThreeCandidates}
+                  className="order-1 sm:order-3"
+                >
+                  후보자 추가 선택
+                </Button>
+              </div>
             </div>
           </div>
+        </>
+      )}
 
-          {/* 모달 내용 */}
-          <div className="p-4">
-            {/* 비교 설정 */}
-            <div className="mb-8">
-              <div className="flex flex-col md:flex-row gap-4 md:items-center">
-                {/* 카테고리 선택 */}
-                <div className="flex-1">
-                  <h3 className="text-lg font-medium mb-3">정책 분야 선택</h3>
-                  <div className="flex overflow-x-auto pb-3 -mx-2 px-2 md:overflow-visible md:flex-wrap md:pb-0">
-                    <div className="flex space-x-2 md:flex-wrap md:gap-2 md:space-x-0">
-                      {categories.map((category) => (
+      {/* 비교 결과 모달 */}
+      {isCompareModalOpen && (
+        <>
+          <div className="fixed inset-x-0 bottom-0 z-50 transform transition-transform duration-300 ease-in-out">
+            <div className="bg-white border-t border-gray-200 shadow-[0_-4px_10px_rgba(0,0,0,0.1)] rounded-t-xl max-h-[80vh] overflow-y-auto">
+              {/* 모달 헤더 */}
+              <div className="sticky top-0 bg-white border-b border-gray-100 px-4 py-3 flex items-center justify-between z-10">
+                <div>
+                  <div className="w-12 h-1 bg-gray-300 rounded-full mx-auto mb-4"></div>
+                  <h2 className="text-xl font-semibold">
+                    {compareMode === "common" ? "공통 공약" : "서로 다른 공약"}
+                  </h2>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="text-gray-500"
+                    onClick={() => setIsCompareModalOpen(false)}
+                  >
+                    닫기
+                  </Button>
+                </div>
+              </div>
+
+              {/* 모달 내용 */}
+              <div className="p-4">
+                {/* 비교 설정 */}
+                <div className="mb-8">
+                  <div className="flex flex-col md:flex-row gap-4 md:items-center">
+                    {/* 카테고리 선택 */}
+                    <div className="flex-1">
+                      <h3 className="text-lg font-medium mb-3">
+                        정책 분야 선택
+                      </h3>
+                      <div className="flex overflow-x-auto pb-3 -mx-2 px-2 md:overflow-visible md:flex-wrap md:pb-0">
+                        <div className="flex space-x-2 md:flex-wrap md:gap-2 md:space-x-0">
+                          {categories.map((category) => (
+                            <Button
+                              key={category.id}
+                              variant={
+                                selectedCategory === category.id
+                                  ? "taeguk"
+                                  : "outline"
+                              }
+                              onClick={() => setSelectedCategory(category.id)}
+                              className="whitespace-nowrap md:whitespace-normal px-4 py-2 md:py-1 text-base md:text-sm flex-shrink-0"
+                            >
+                              {category.title}
+                            </Button>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 비교 모드 선택 */}
+                    <div className="md:w-64">
+                      <h3 className="text-lg font-medium mb-3">비교 모드</h3>
+                      <div className="flex gap-2">
                         <Button
-                          key={category.id}
                           variant={
-                            selectedCategory === category.id
-                              ? "taeguk"
-                              : "outline"
+                            compareMode === "common" ? "taeguk" : "outline"
                           }
-                          onClick={() => setSelectedCategory(category.id)}
-                          className="whitespace-nowrap md:whitespace-normal px-4 py-2 md:py-1 text-base md:text-sm flex-shrink-0"
+                          onClick={() => setCompareMode("common")}
+                          className="flex-1"
                         >
-                          {category.title}
+                          공통 공약
                         </Button>
-                      ))}
+                        <Button
+                          variant={
+                            compareMode === "difference" ? "taeguk" : "outline"
+                          }
+                          onClick={() => setCompareMode("difference")}
+                          className="flex-1"
+                        >
+                          차이점
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                {/* 비교 모드 선택 */}
-                <div className="md:w-64">
-                  <h3 className="text-lg font-medium mb-3">비교 모드</h3>
-                  <div className="flex gap-2">
-                    <Button
-                      variant={compareMode === "common" ? "taeguk" : "outline"}
-                      onClick={() => setCompareMode("common")}
-                      className="flex-1"
-                    >
-                      공통 공약
-                    </Button>
-                    <Button
-                      variant={
-                        compareMode === "difference" ? "taeguk" : "outline"
-                      }
-                      onClick={() => setCompareMode("difference")}
-                      className="flex-1"
-                    >
-                      차이점
-                    </Button>
-                  </div>
+                {/* 비교 결과 */}
+                <div>
+                  {comparisonResults.length > 0 ? (
+                    <div className="pb-20">
+                      {comparisonResults.map((item) => (
+                        <PledgeComparisonCard key={item.id} item={item} />
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="text-center py-12 bg-gray-50 rounded-lg mb-8">
+                      <p className="text-lg text-gray-600">
+                        {compareMode === "common"
+                          ? "선택한 후보자들 간의 공통 공약이 없습니다."
+                          : "선택한 후보자들 간의 차이점이 없습니다."}
+                      </p>
+                      <p className="text-gray-500 mt-2">
+                        다른 정책 분야를 선택하거나 비교 모드를 변경해보세요.
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
-
-            {/* 비교 결과 */}
-            <div>
-              {comparisonResults.length > 0 ? (
-                <div className="pb-20">
-                  {comparisonResults.map((item) => (
-                    <PledgeComparisonCard key={item.id} item={item} />
-                  ))}
-                </div>
-              ) : (
-                <div className="text-center py-12 bg-gray-50 rounded-lg mb-8">
-                  <p className="text-lg text-gray-600">
-                    {compareMode === "common"
-                      ? "선택한 후보자들 간의 공통 공약이 없습니다."
-                      : "선택한 후보자들 간의 차이점이 없습니다."}
-                  </p>
-                  <p className="text-gray-500 mt-2">
-                    다른 정책 분야를 선택하거나 비교 모드를 변경해보세요.
-                  </p>
-                </div>
-              )}
-            </div>
           </div>
-        </div>
-      </div>
 
-      {/* 모달 배경 오버레이 */}
-      <div
-        className={`fixed inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-300 z-40 ${
-          isModalOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
-        onClick={() => setIsModalOpen(false)}
-      ></div>
+          {/* 모달 배경 오버레이 */}
+          <div
+            className="fixed inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-300 z-40"
+            onClick={() => setIsCompareModalOpen(false)}
+          ></div>
+        </>
+      )}
     </div>
   );
 };

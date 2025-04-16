@@ -498,7 +498,7 @@ export const CANDIDATES = [
             id: "education-1",
             title: "지역 교육 균형 발전",
             description: "지방 교육의 질적 향상을 위한 정책을 추진합니다.",
-            details: "지방 대학 지원 확대, 지역 특성화 교육 강화",
+            details: "지방 대학 육성, 교육 인프라 균형 배분",
             isComplete: false,
           },
         ],
@@ -531,13 +531,16 @@ const PledgesPage = () => {
 
   const toggleCandidateSelection = (candidateId: string) => {
     if (selectedCandidates.includes(candidateId)) {
+      // 이미 선택된 후보자 클릭 시 선택 해제
       setSelectedCandidates(
         selectedCandidates.filter((id) => id !== candidateId)
       );
     } else {
       if (selectedCandidates.length < 2) {
+        // 첫 번째 또는 두 번째 후보자 선택 시 바로 추가 (최대 2명)
         setSelectedCandidates([...selectedCandidates, candidateId]);
       } else {
+        // 이미 두 명 선택됨 (이전 선택 대체)
         setSelectedCandidates([selectedCandidates[1], candidateId]);
       }
     }
@@ -593,14 +596,14 @@ const PledgesPage = () => {
         </p>
 
         {/* 공약 보기 모드 전환 */}
-        <div className="flex flex-wrap gap-3 mb-8">
+        <div className="flex flex-wrap gap-2 mb-8">
           <Button
             variant={!comparisonMode ? "taeguk" : "outline"}
             onClick={() => {
               setComparisonMode(false);
               setSelectedCandidates([]);
             }}
-            className="flex-1 md:flex-none px-4 py-2 md:py-1 text-base md:text-sm"
+            className="flex-1 md:flex-none px-3 py-1.5 md:py-1 text-sm whitespace-normal"
           >
             개별 공약 보기
           </Button>
@@ -608,7 +611,7 @@ const PledgesPage = () => {
           <Button
             variant={comparisonMode ? "taeguk" : "outline"}
             onClick={() => setComparisonMode(true)}
-            className="flex-1 md:flex-none px-4 py-2 md:py-1 text-base md:text-sm"
+            className="flex-1 md:flex-none px-3 py-1.5 md:py-1 text-sm whitespace-normal"
           >
             공약 비교하기
           </Button>
@@ -616,7 +619,7 @@ const PledgesPage = () => {
           <Button
             variant="outline"
             asChild
-            className="flex-1 md:flex-none px-4 py-2 md:py-1 text-base md:text-sm"
+            className="flex-1 md:flex-none px-3 py-1.5 md:py-1 text-sm whitespace-normal"
           >
             <Link to="/comparison">고급 비교 모드</Link>
           </Button>
@@ -625,13 +628,13 @@ const PledgesPage = () => {
 
       {/* 카테고리 필터 */}
       <div className="flex overflow-x-auto pb-3 -mx-2 px-2 mb-8 md:overflow-visible md:flex-wrap md:pb-0">
-        <div className="flex space-x-2 md:flex-wrap md:gap-2 md:space-x-0">
+        <div className="flex gap-2 md:flex-wrap md:gap-2">
           {categories.map((category) => (
             <Button
               key={category.id}
               variant={selectedCategory === category.id ? "taeguk" : "outline"}
               onClick={() => setSelectedCategory(category.id)}
-              className="whitespace-nowrap md:whitespace-normal px-4 py-2 md:py-1 text-base md:text-sm flex-shrink-0"
+              className="px-3 py-1.5 md:py-1 text-sm whitespace-nowrap flex-shrink-0"
             >
               {category.title}
             </Button>
@@ -765,7 +768,7 @@ const PledgesPage = () => {
           )}
 
           {/* 비교 테이블 */}
-          {selectedCandidates.length === 2 && (
+          {selectedCandidates.length >= 2 && (
             <div>
               <h2 className="text-xl font-semibold mb-4">후보자 공약 비교</h2>
 
