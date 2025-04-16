@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <g id="election-mascot" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="body-background" fill="#F3E8FF" cx="100" cy="100" r="90"></circle>
+        
+        <!-- 얼굴 -->
+        <circle id="face" fill="#FFFFFF" cx="100" cy="90" r="60"></circle>
+        
+        <!-- 모자 -->
+        <path d="M100,30 C70,30 45,42 45,60 L155,60 C155,42 130,30 100,30" id="hat" fill="#6B46C1"></path>
+        <rect id="hat-band" fill="#FFFFFF" x="45" y="55" width="110" height="10" rx="3"></rect>
+        
+        <!-- 눈 -->
+        <circle id="left-eye" fill="#333333" cx="80" cy="90" r="7"></circle>
+        <circle id="right-eye" fill="#333333" cx="120" cy="90" r="7"></circle>
+        
+        <!-- 입 -->
+        <path d="M85,110 C85,120 115,120 115,110" id="mouth" stroke="#333333" stroke-width="3" stroke-linecap="round"></path>
+        
+        <!-- 뺨 -->
+        <circle id="left-cheek" fill="#FFAFAF" cx="70" cy="105" r="10" opacity="0.7"></circle>
+        <circle id="right-cheek" fill="#FFAFAF" cx="130" cy="105" r="10" opacity="0.7"></circle>
+        
+        <!-- 투표함 -->
+        <rect id="ballot-box" fill="#6B46C1" x="70" y="140" width="60" height="40" rx="5"></rect>
+        <rect id="ballot-box-slot" fill="#FFFFFF" x="85" y="140" width="30" height="5" rx="2"></rect>
+        <rect id="ballot-paper" fill="#FFFFFF" x="95" y="125" width="10" height="20" rx="2"></rect>
+        
+        <!-- 태극 문양 -->
+        <circle id="taeguk-blue" fill="#0047A0" cx="100" cy="160" r="10"></circle>
+        <path d="M100,150 A10,10 0 0 1 100,170 A10,10 0 0 1 100,150" id="taeguk-red" fill="#E61E2B"></path>
+    </g>
+</svg> 
