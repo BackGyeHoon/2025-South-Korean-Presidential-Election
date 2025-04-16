@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+    --primary: 214 100% 58%; /* 토스 메인 컬러 - 파란색 */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 0 0% 93%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --text: 217 14% 13%;
+    --text-light: 213 10% 59%;
+    --accent: 214 100% 97%;
+  }
+
+  body {
+    @apply bg-white text-gray-900 font-sans;
+    margin: 0;
+    min-height: 100vh;
+  }
+}
+
+/* 커스텀 유틸리티 클래스 */
+@layer utilities {
+  .bg-background {
+    background-color: #ffffff;
+  }
+  .text-text {
+    color: #191f28;
+  }
+  .text-text-light {
+    color: #8b95a1;
+  }
+}
