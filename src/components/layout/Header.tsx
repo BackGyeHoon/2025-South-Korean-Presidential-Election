@@ -11,7 +11,7 @@ const Header = () => {
           <img
             src="/images/logo.png"
             alt="공육공삼 로고"
-            className="h-16 md:h-20"
+            className="h-24 md:h-28"
           />
         </Link>
 
