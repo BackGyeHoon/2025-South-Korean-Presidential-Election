@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../components/ui/button";
-import { CANDIDATES } from "./PledgesPage";
+import { CANDIDATES, Candidate, Category, Pledge } from "../data/candidates";
 
 const CandidateComparePage = () => {
   // 선택된 후보자들의 ID를 저장
@@ -38,13 +38,10 @@ const CandidateComparePage = () => {
     setRandomizedCandidates(shuffled);
   }, []);
 
-  // 선택된 후보자가 2명 이상이면 비교 모달 열기
+  // 선택된 후보자가 2명 이상일 때 자동으로 모달 열기
   useEffect(() => {
-    // selectingAdditional이 true인 경우 모달을 열지 않음
     if (selectedCandidates.length >= 2 && !selectingAdditional) {
       setIsCompareModalOpen(true);
-    } else {
-      setIsCompareModalOpen(false);
     }
   }, [selectedCandidates, selectingAdditional]);
 
@@ -319,6 +316,11 @@ const CandidateComparePage = () => {
   // 비교 결과 가져오기
   const comparisonResults = comparePledges(selectedCategory);
 
+  // 모달 닫을 때 처리
+  const handleCloseModal = () => {
+    setIsCompareModalOpen(false);
+  };
+
   return (
     <div className="container mx-auto p-4 md:p-8">
       <div className="mb-10">
@@ -474,7 +476,7 @@ const CandidateComparePage = () => {
                     variant="ghost"
                     size="sm"
                     className="text-gray-500"
-                    onClick={() => setIsCompareModalOpen(false)}
+                    onClick={handleCloseModal}
                   >
                     닫기
                   </Button>
@@ -566,7 +568,7 @@ const CandidateComparePage = () => {
           {/* 모달 배경 오버레이 */}
           <div
             className="fixed inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-300 z-40"
-            onClick={() => setIsCompareModalOpen(false)}
+            onClick={handleCloseModal}
           ></div>
         </>
       )}

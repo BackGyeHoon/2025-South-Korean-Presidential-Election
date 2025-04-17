@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import VotingAnimation from "../components/home/VotingAnimation";
-import { CANDIDATES } from "./PledgesPage";
+import { CANDIDATES } from "../data/candidates";
 
 const HomePage: React.FC = () => {
   // 후보자 목록을 랜덤하게 섞기
