@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://0603.info/sitemap.xml 

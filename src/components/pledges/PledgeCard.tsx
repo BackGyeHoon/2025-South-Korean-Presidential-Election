@@ -1,5 +1,3 @@
-import React from "react";
-
 // PledgeCard 컴포넌트 속성 정의
 interface PledgeCardProps {
   id: string;
@@ -11,7 +9,6 @@ interface PledgeCardProps {
 
 // 공약 카드 컴포넌트
 const PledgeCard: React.FC<PledgeCardProps> = ({
-  id,
   title,
   description,
   details,
