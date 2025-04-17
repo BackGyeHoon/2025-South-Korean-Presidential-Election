@@ -95,7 +95,7 @@ const HomePage: React.FC = () => {
               주요 후보자
             </h2>
             <Link
-              to="/candidates"
+              to="/pledges"
               className="text-sm sm:text-base text-primary hover:underline"
             >
               모든 후보 보기 →
