@@ -72,7 +72,7 @@ const HomePage: React.FC = () => {
               title="후보자 정보"
               description="후보자의 상세 정보와 소셜 미디어를 확인할 수 있습니다."
               icon="👤"
-              link="/candidates"
+              link="/pledges"
             />
             <FeatureCard
               title="투표 준비"
