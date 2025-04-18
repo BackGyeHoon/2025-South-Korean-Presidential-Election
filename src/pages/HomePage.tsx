@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import VotingAnimation from "../components/home/VotingAnimation";
+import VotingScrollAnimation from "../components/home/VotingScrollAnimation";
 import { CANDIDATES } from "../data/candidates";
 
 const HomePage: React.FC = () => {
@@ -81,6 +82,15 @@ const HomePage: React.FC = () => {
               link="/voting-info"
             />
           </div>
+        </motion.section>
+
+        {/* 투표 스크롤 애니메이션 섹션 */}
+        <motion.section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.7 }}
+        >
+          <VotingScrollAnimation />
         </motion.section>
 
         {/* 후보자 슬라이드 섹션 */}

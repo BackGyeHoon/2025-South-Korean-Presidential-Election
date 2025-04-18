@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import { CANDIDATES } from "../data/candidates";
+import { Helmet } from "react-helmet";
 
 // SNS 아이콘 컴포넌트들
 const FacebookIcon = () => (
@@ -49,6 +50,25 @@ const YoutubeIcon = () => (
     fill="currentColor"
   >
     <path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z" />
+  </svg>
+);
+
+// 공유 아이콘 컴포넌트
+const ShareIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+    <polyline points="16 6 12 2 8 6"></polyline>
+    <line x1="12" y1="2" x2="12" y2="15"></line>
   </svg>
 );
 
@@ -109,6 +129,52 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ sns }) => {
   );
 };
 
+// 모달 컴포넌트
+interface ModalProps {
+  isOpen: boolean;
+  message: string;
+  onClose: () => void;
+}
+
+const Modal: React.FC<ModalProps> = ({ isOpen, message, onClose }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 flex items-center justify-center z-50">
+      <div
+        className="fixed inset-0 bg-black bg-opacity-30"
+        onClick={onClose}
+      ></div>
+      <div className="bg-white rounded-lg shadow-lg p-6 max-w-sm mx-auto relative z-10">
+        <div className="text-center">
+          <div className="mb-4 bg-green-100 text-green-700 rounded-full w-12 h-12 flex items-center justify-center mx-auto">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          <p className="text-gray-700 mb-4">{message}</p>
+          <button
+            onClick={onClose}
+            className="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition-colors"
+          >
+            확인
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 interface ProfileSectionProps {
   candidate: any;
   details: any;
@@ -118,6 +184,33 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
   candidate,
   details,
 }) => {
+  // 모달 상태 관리
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
+
+  // 공유 기능 - 단순히 클립보드에 복사만 실행
+  const handleShare = () => {
+    const url = window.location.href;
+    copyToClipboard(url);
+  };
+
+  // 클립보드에 URL 복사
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        // alert 대신 모달 표시
+        setModalMessage("링크가 클립보드에 복사되었습니다.");
+        setModalOpen(true);
+      })
+      .catch((err) => {
+        console.error("클립보드 복사 실패:", err);
+        // 오류 시에도 모달로 표시
+        setModalMessage("링크 복사에 실패했습니다. 다시 시도해주세요.");
+        setModalOpen(true);
+      });
+  };
+
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden mb-8">
       <div className="h-3" style={{ backgroundColor: candidate.color }}></div>
@@ -138,11 +231,21 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
               <h1 className="text-3xl md:text-4xl font-bold">
                 {candidate.name}
               </h1>
-              <div
-                className="inline-block px-3 py-1 rounded-full text-sm font-medium"
-                style={{ backgroundColor: candidate.color, color: "white" }}
-              >
-                {candidate.party}
+              <div className="flex items-center gap-2">
+                <div
+                  className="inline-block px-3 py-1 rounded-full text-sm font-medium"
+                  style={{ backgroundColor: candidate.color, color: "white" }}
+                >
+                  {candidate.party}
+                </div>
+                {/* 공유 버튼 추가 */}
+                <button
+                  onClick={handleShare}
+                  className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors"
+                  title="이 페이지 링크 복사하기"
+                >
+                  <ShareIcon />
+                </button>
               </div>
             </div>
 
@@ -166,6 +269,13 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
           </div>
         </div>
       </div>
+
+      {/* 복사 완료 모달 */}
+      <Modal
+        isOpen={modalOpen}
+        message={modalMessage}
+        onClose={() => setModalOpen(false)}
+      />
     </div>
   );
 };
@@ -307,30 +417,48 @@ const CandidateDetailPage: React.FC = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      {/* 후보자 프로필 */}
-      <ProfileSection candidate={candidate} details={candidate.details} />
+    <>
+      {/* OG 태그 설정 */}
+      <Helmet>
+        <meta
+          property="og:title"
+          content={`${candidate.name} - ${candidate.party} | 2025 대선 후보`}
+        />
+        <meta property="og:description" content={candidate.description} />
+        <meta property="og:image" content={candidate.image} />
+        <meta property="og:url" content={window.location.href} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
 
-      {/* 후보자 상세 정보 */}
-      {candidate.details && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          <InfoCard title="주요 경력" items={candidate.details.career} />
-          <InfoCard title="주요 성과" items={candidate.details.achievements} />
+      <div className="container mx-auto px-4 py-8">
+        {/* 후보자 프로필 */}
+        <ProfileSection candidate={candidate} details={candidate.details} />
+
+        {/* 후보자 상세 정보 */}
+        {candidate.details && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <InfoCard title="주요 경력" items={candidate.details.career} />
+            <InfoCard
+              title="주요 성과"
+              items={candidate.details.achievements}
+            />
+          </div>
+        )}
+
+        {/* 주요 정책 및 공약 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {allCategories.map((category) => (
+            <PolicyCard
+              key={category}
+              category={category}
+              candidate={candidate}
+              additionalPolicies={candidate.additional_policies}
+            />
+          ))}
         </div>
-      )}
-
-      {/* 주요 정책 및 공약 */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {allCategories.map((category) => (
-          <PolicyCard
-            key={category}
-            category={category}
-            candidate={candidate}
-            additionalPolicies={candidate.additional_policies}
-          />
-        ))}
       </div>
-    </div>
+    </>
   );
 };
 
