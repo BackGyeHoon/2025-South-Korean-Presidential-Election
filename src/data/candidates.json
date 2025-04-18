@@ -443,11 +443,11 @@
         ]
       },
       {
-        "id": "welfare",
-        "title": "복지",
+        "id": "defense",
+        "title": "국방/안보",
         "pledges": [
           {
-            "id": "welfare-1",
+            "id": "defense-1",
             "title": "국가안보 강화",
             "description": "국방력 강화를 통한 국가 안보를 확보합니다.",
             "details": "국방비 증액, 첨단 무기 체계 도입",
