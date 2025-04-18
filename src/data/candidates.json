@@ -59,6 +59,40 @@
             "isComplete": false
           }
         ]
+      },
+      {
+        "id": "culture",
+        "title": "문화",
+        "pledges": [
+          {
+            "id": "culture-1",
+            "title": "문화 수출 50조 원 달성",
+            "description": "2030년까지 K-콘텐츠 수출 규모를 50조 원으로 확대합니다.",
+            "details": "K-푸드, K-뷰티, K-팝, K-드라마, K-웹툰 등 세계 시장 진출 전폭 지원",
+            "isComplete": false
+          },
+          {
+            "id": "culture-2",
+            "title": "문화예산 대폭 확대",
+            "description": "국가 총지출 대비 문화예산 비율을 대폭 확대합니다.",
+            "details": "현재 1.33%에서 단계적으로 증액, 인문학·예술 창작 지원 강화",
+            "isComplete": false
+          },
+          {
+            "id": "culture-3",
+            "title": "창작 환경 개선",
+            "description": "문화예술인의 안정적 창작 환경 조성을 위한 정책",
+            "details": "전문조직 설립 추진, 창작지원금 확대 및 창작 공간 제공",
+            "isComplete": false
+          },
+          {
+            "id": "culture-4",
+            "title": "세제 혜택 확대",
+            "description": "웹툰 등 디지털 콘텐츠 분야에도 세제 혜택을 적용합니다.",
+            "details": "현재 영상 콘텐츠에 적용되는 세제 감면을 웹툰까지 확대",
+            "isComplete": false
+          }
+        ]
       }
     ],
     "additional_policies": {
