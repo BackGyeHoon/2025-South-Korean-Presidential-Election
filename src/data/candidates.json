@@ -506,6 +506,20 @@
             "description": "청년 세대를 위한 사회 안전망 구축과 기회 균등을 보장합니다.",
             "details": "청년 기본소득 도입, 주거 지원 확대, 고용 안정망 강화",
             "isComplete": false
+          },
+          {
+            "id": "welfare-2",
+            "title": "노인 무임승차 제도 개편",
+            "description": "지역 간 형평성을 고려한 노인 교통 지원 정책을 추진합니다.",
+            "details": "전국 65세 이상 노인에게 월 1만 원 교통바우처 제공, 40% 교통비 할인 적용",
+            "isComplete": false
+          },
+          {
+            "id": "welfare-3",
+            "title": "현금성 복지 축소 및 세대 공정성 강화",
+            "description": "미래 세대의 부담을 줄이기 위한 복지 정책 개편을 추진합니다.",
+            "details": "과도한 현금성 복지 축소, 정년 연장 시 국민연금 수급 연령 상향 등 사회적 타협 추진",
+            "isComplete": false
           }
         ]
       },
@@ -518,6 +532,32 @@
             "title": "교육 혁신",
             "description": "미래 인재 양성을 위한 교육 시스템 개혁을 추진합니다.",
             "details": "입시 중심 교육 탈피, 창의성 교육 확대, 평생학습 체계 구축",
+            "isComplete": false
+          }
+        ]
+      },
+      {
+        "id": "tech",
+        "title": "과학기술",
+        "pledges": [
+          {
+            "id": "tech-1",
+            "title": "과학기술 및 산업 정책 강화",
+            "description": "AI, 바이오 등 첨단 산업 분야의 경쟁력 강화를 추진합니다.",
+            "details": "민간 및 공공 부문의 인재 영입, AI・바이오・국방 분야 공약 업그레이드, 실질적 정책 실행력 강화",
+            "isComplete": false
+          }
+        ]
+      },
+      {
+        "id": "politics",
+        "title": "정치",
+        "pledges": [
+          {
+            "id": "politics-1",
+            "title": "행정수도 세종 완성",
+            "description": "세종시를 명실상부한 행정수도로 완성하겠다는 공약입니다.",
+            "details": "노무현 전 대통령의 꿈과 박근혜 전 대통령의 소신을 계승, 국가 균형 발전 도모",
             "isComplete": false
           }
         ]
