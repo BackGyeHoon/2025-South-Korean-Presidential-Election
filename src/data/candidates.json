@@ -24,6 +24,13 @@
             "description": "중소기업 세금 감면 및 지원금 확대로 경제 활성화를 추진합니다.",
             "details": "중소기업 법인세 5% 인하, R&D 지원금 2배 확대",
             "isComplete": false
+          },
+          {
+            "id": "economy-3",
+            "title": "영남권 지역 발전 전략",
+            "description": "영남권 지역별 특화 발전을 위한 전략적 투자를 실시합니다.",
+            "details": "부산·울산·경남을 해양수도로 육성, 대구·경북 지역을 글로벌 이차전지 공급망의 핵심 거점으로 조성",
+            "isComplete": false
           }
         ]
       },
@@ -56,6 +63,32 @@
             "title": "대학 등록금 지원 확대",
             "description": "저소득층 대학생 등록금 전액 지원을 확대합니다.",
             "details": "소득 하위 30%까지 확대하여 교육 기회를 보장합니다.",
+            "isComplete": false
+          }
+        ]
+      },
+      {
+        "id": "healthcare",
+        "title": "의료",
+        "pledges": [
+          {
+            "id": "healthcare-1",
+            "title": "공공의료 확충",
+            "description": "의료 접근성 향상을 위한 공공의료 확충을 추진합니다.",
+            "details": "공공의료 시설 확대, 의대 정원 합리화를 통한 의료 인력 확충",
+            "isComplete": false
+          }
+        ]
+      },
+      {
+        "id": "politics",
+        "title": "정치",
+        "pledges": [
+          {
+            "id": "politics-1",
+            "title": "세종 대통령실 건립",
+            "description": "세종시에 대통령 집무실을 설치하여 행정수도를 완성합니다.",
+            "details": "세종시 대통령 집무실 설치, 제2차 공공기관 이전 추진",
             "isComplete": false
           }
         ]
@@ -614,6 +647,39 @@
             "description": "취약계층을 위한 복지 지원을 확대합니다.",
             "details": "기초생활보장 수급자 확대, 노인 일자리 확대",
             "isComplete": false
+          },
+          {
+            "id": "welfare-2",
+            "title": "국민기본생활보장제 도입",
+            "description": "전 국민 최저소득 보장을 통한 절대빈곤 방지 제도를 도입합니다.",
+            "details": "전 국민에게 중위소득 40% 수준의 최저소득 보장",
+            "isComplete": false
+          }
+        ]
+      },
+      {
+        "id": "defense",
+        "title": "국방",
+        "pledges": [
+          {
+            "id": "defense-1",
+            "title": "병역제도 개편",
+            "description": "징병제와 모병제를 혼용하는 병역제도를 도입합니다.",
+            "details": "인구 감소에 대응하는 혼합형 병역제도 구축",
+            "isComplete": false
+          }
+        ]
+      },
+      {
+        "id": "politics",
+        "title": "정치",
+        "pledges": [
+          {
+            "id": "politics-1",
+            "title": "검찰청 폐지 및 수사·기소 분리",
+            "description": "수사와 기소 기능을 분리한 새로운 사법체계를 구축합니다.",
+            "details": "검찰청 폐지, 중앙수사청과 기소청 신설",
+            "isComplete": false
           }
         ]
       },
@@ -681,6 +747,13 @@
             "description": "중소기업과 소상공인의 경쟁력 강화를 위한 지원 정책을 확대합니다.",
             "details": "금융 지원 확대, 규제 완화, 창업 지원 프로그램 운영",
             "isComplete": false
+          },
+          {
+            "id": "economy-3",
+            "title": "수도권 및 호남 지역 발전 전략",
+            "description": "수도권과 호남 지역의 특화 발전을 위한 맞춤형 전략을 추진합니다.",
+            "details": "경기북부특별자치도 설치, 수도권 1시간대 출근 교통망 구축, 서해안 RE100 라인 투자, 5·18 정신의 헌법 전문 수록",
+            "isComplete": false
           }
         ]
       },
@@ -693,6 +766,32 @@
             "title": "사회 안전망 강화",
             "description": "취약계층을 위한 복지 지원을 확대합니다.",
             "details": "기초생활보장 수급자 확대, 노인 일자리 확대",
+            "isComplete": false
+          }
+        ]
+      },
+      {
+        "id": "labor",
+        "title": "노동",
+        "pledges": [
+          {
+            "id": "labor-1",
+            "title": "비정규직 청년 지원",
+            "description": "비정규직 청년들의 재충전과 자기계발을 위한 제도를 도입합니다.",
+            "details": "비정규직으로 7년간 일한 청년에게 6개월간 유급휴가를 제공하는 '노동시간 저축계좌' 제도 도입",
+            "isComplete": false
+          }
+        ]
+      },
+      {
+        "id": "defense",
+        "title": "국방",
+        "pledges": [
+          {
+            "id": "defense-1",
+            "title": "모병제 전환",
+            "description": "2035년까지 남녀 모두를 대상으로 한 모병제로 전환합니다.",
+            "details": "단계적 모병제 전환을 통한 군 현대화 및 효율화 추진",
             "isComplete": false
           }
         ]
