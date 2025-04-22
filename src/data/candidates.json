@@ -145,6 +145,14 @@
             "description": "불필요한 경제 규제를 완화하여 경제 활성화를 도모합니다.",
             "details": "규제 샌드박스 확대 및 신산업 분야 규제 개혁 추진",
             "isComplete": false
+          },
+          {
+            "id": "economy-3",
+            "title": "5대 메가폴리스 조성",
+            "description": "전국에 5개의 서울을 만들겠다는 국토 균형 발전 구상입니다.",
+            "details": "AI, 바이오, 에너지, 미래차, 반도체 등 5대 전략산업 중심으로 산업·대학·연구소·청년인재·민간자본 집중 육성",
+            "isComplete": false,
+            "announced": "2025년 4월 22일"
           }
         ]
       },
@@ -230,6 +238,14 @@
             "description": "노동시장의 유연성을 높여 일자리 창출을 촉진합니다.",
             "details": "노동법 개정을 통한 고용 유연화, 성과 중심 임금체계 도입",
             "isComplete": false
+          },
+          {
+            "id": "economy-2",
+            "title": "전국 5대 광역권 GTX 구축",
+            "description": "전국 5대 광역권에 광역급행철도(GTX)를 구축합니다.",
+            "details": "교통 인프라 확충을 통한 국토 균형 발전 도모",
+            "isComplete": false,
+            "announced": "2025년 4월 22일"
           }
         ]
       },
@@ -243,6 +259,20 @@
             "description": "출산 장려 정책을 강화하여 인구 감소 문제에 대응합니다.",
             "details": "출산 지원금 확대, 육아 휴직 제도 개선",
             "isComplete": false
+          }
+        ]
+      },
+      {
+        "id": "housing",
+        "title": "주택",
+        "pledges": [
+          {
+            "id": "housing-1",
+            "title": "청년 주거 안정 3대 공약",
+            "description": "청년 부동산 문제 해결을 위한 3대 정책을 추진합니다.",
+            "details": "대학가 '반값 월세존' 지정, 1인형 아파트 및 오피스텔 공급 확대, 세대 공존형 아파트 공급",
+            "isComplete": false,
+            "announced": "2025년 4월 22일"
           }
         ]
       },
@@ -299,6 +329,14 @@
             "description": "인공지능 기술을 통한 산업 혁신을 추진합니다.",
             "details": "AI 인재 10만명 양성, 디지털 전환 지원 확대",
             "isComplete": false
+          },
+          {
+            "id": "economy-2",
+            "title": "과학기술 중심 미래 비전",
+            "description": "인공지능 분야의 전문성을 기반으로 국가 미래 전략을 수립합니다.",
+            "details": "첨단 과학기술 육성을 통한 국가 경쟁력 강화, AI 분야 집중 투자",
+            "isComplete": false,
+            "announced": "2025년 4월 13일"
           }
         ]
       },
@@ -396,6 +434,20 @@
             "description": "학생들의 경쟁력 강화를 위한 교육 개혁을 추진합니다.",
             "details": "영재교육 확대, 기초학력 보장 강화",
             "isComplete": false
+          }
+        ]
+      },
+      {
+        "id": "social",
+        "title": "사회",
+        "pledges": [
+          {
+            "id": "social-1",
+            "title": "사회·교육·문화 분야 개혁",
+            "description": "사회 체제 개편을 위한 강력한 개혁 정책을 추진합니다.",
+            "details": "사형제 부활, 청와대 복원, 제7공화국 개헌 추진",
+            "isComplete": false,
+            "announced": "2025년 4월 18일"
           }
         ]
       }
