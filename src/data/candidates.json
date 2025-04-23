@@ -151,6 +151,18 @@
         "instagram": "https://www.instagram.com/2_jaemyung",
         "youtube": "https://www.youtube.com/channel/UCNJM6dqu70Qr6VaseiW1Org"
       }
+    },
+    "assets": {
+      "totalAssets": 3090,
+      "housing": {
+        "count": 1,
+        "ownership": "부부 공동명의",
+        "location": "경기 성남시 분당구 수내동",
+        "name": "양지마을 금호1단지",
+        "type": "아파트",
+        "estimatedPrice": 1800
+      },
+      "source": "매일경제, 네이트뉴스"
     }
   },
   {
@@ -251,6 +263,19 @@
         "instagram": "https://www.instagram.com/dhhan.official",
         "youtube": "https://www.youtube.com/channel/UCris9QMbviXz-Zh__wA4JFA"
       }
+    },
+    "assets": {
+      "totalAssets": 3960,
+      "housing": {
+        "count": 1,
+        "ownership": "부부 공동명의",
+        "location": "서울 서초구 잠원동",
+        "name": "신반포청구아파트",
+        "type": "아파트",
+        "note": "현재는 서울 서초구 타워팰리스에 전세로 거주 중",
+        "estimatedPrice": 3100
+      },
+      "source": "한국경제, 네이트뉴스"
     }
   },
   {
@@ -342,6 +367,19 @@
         "facebook": "https://www.facebook.com/profile.php?id=61565088183197",
         "instagram": "https://www.instagram.com/moel.kimmoonsoo"
       }
+    },
+    "assets": {
+      "totalAssets": 1870,
+      "housing": {
+        "count": 1,
+        "ownership": "배우자 명의",
+        "location": "서울 성북구",
+        "name": "래미안월곡아파트",
+        "type": "아파트",
+        "note": "신혼집으로 오래 거주",
+        "estimatedPrice": 1400
+      },
+      "source": "KB부동산, 국토교통부"
     }
   },
   {
@@ -421,6 +459,19 @@
         "twitter": "https://x.com/cheolsoo0919",
         "youtube": "https://www.youtube.com/channel/UCTPfDsz2XqmLzYud-fc6xBw"
       }
+    },
+    "assets": {
+      "totalAssets": 136800,
+      "housing": {
+        "count": 0,
+        "ownership": "없음",
+        "location": "없음",
+        "name": "없음",
+        "type": "무주택",
+        "note": "과거 서울 노원구 상계동 수락산 늘푸른아파트에 전세로 거주했으나, 해당 아파트를 처분하여 현재는 무주택 상태"
+      },
+      "mainAssets": "안랩 주식 186만 주(약 1,231억 원), 예금 약 34억 원, 채권 약 29억 원 등",
+      "source": "헤럴드 비즈니스, 아주경제"
     }
   },
   {
@@ -506,6 +557,18 @@
         "instagram": "https://www.instagram.com/1hongjp",
         "youtube": "https://www.youtube.com/channel/UCfmicRK2-WdZMVQDrfcitLA"
       }
+    },
+    "assets": {
+      "totalAssets": 4260,
+      "housing": {
+        "count": 1,
+        "ownership": "부부 공동명의",
+        "location": "서울 송파구 잠실동",
+        "name": "아시아선수촌아파트",
+        "type": "아파트",
+        "estimatedPrice": 2700
+      },
+      "source": "Skyedaily, 아주경제"
     }
   },
   {
@@ -614,6 +677,18 @@
         "instagram": "https://www.instagram.com/junseokandylee",
         "youtube": "https://www.youtube.com/channel/UC1BidQrI74hWSIN3EMdvTVQ"
       }
+    },
+    "assets": {
+      "totalAssets": 1250,
+      "housing": {
+        "count": 1,
+        "ownership": "단독 명의",
+        "location": "서울 노원구",
+        "name": "미공개",
+        "type": "아파트",
+        "estimatedPrice": 1000
+      },
+      "source": "아시아경제"
     }
   },
   {
@@ -836,6 +911,18 @@
         "instagram": "https://www.instagram.com/kimdongyeon_dy",
         "youtube": "https://www.youtube.com/channel/UCDBTesvGqBsob4BsOc41hqA"
       }
+    },
+    "assets": {
+      "totalAssets": 3500,
+      "housing": {
+        "count": 1,
+        "ownership": "배우자 명의",
+        "location": "서울 강남구",
+        "name": "미공개",
+        "type": "아파트",
+        "estimatedPrice": 3500
+      },
+      "source": "아시아경제"
     }
   }
 ]
