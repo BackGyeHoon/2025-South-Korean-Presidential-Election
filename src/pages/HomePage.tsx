@@ -62,7 +62,7 @@ const HomePage: React.FC = () => {
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-10">
             주요 기능
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             <FeatureCard
               title="공약 비교"
               description="각 후보자들의 공약을 카테고리별로 비교해볼 수 있습니다."
@@ -74,6 +74,12 @@ const HomePage: React.FC = () => {
               description="후보자의 상세 정보와 소셜 미디어를 확인할 수 있습니다."
               icon="👤"
               link="/pledges"
+            />
+            <FeatureCard
+              title="재산 내역"
+              description="주요 후보자들의 신고 재산 내역을 확인할 수 있습니다."
+              icon="💰"
+              link="/candidate-assets"
             />
             <FeatureCard
               title="투표 준비"

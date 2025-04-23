@@ -44,6 +44,7 @@ const Header = () => {
           <NavLink to="/">홈</NavLink>
           <NavLink to="/pledges">공약 안내</NavLink>
           <NavLink to="/comparison">후보자 비교</NavLink>
+          <NavLink to="/candidate-assets">재산 내역</NavLink>
           <NavLink to="/voting-info">투표 안내</NavLink>
         </nav>
 
@@ -71,6 +72,13 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 후보자 비교
+              </Link>
+              <Link
+                to="/candidate-assets"
+                className="py-2 border-b border-gray-100"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                재산 내역
               </Link>
               <Link
                 to="/voting-info"

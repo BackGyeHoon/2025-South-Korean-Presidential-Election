@@ -9,6 +9,7 @@ import PledgesPage from "./pages/PledgesPage";
 import VotingInfoPage from "./pages/VotingInfoPage";
 import CandidateDetailPage from "./pages/CandidateDetailPage";
 import CandidateComparePage from "./pages/CandidateComparePage";
+import CandidateAssetsPage from "./pages/CandidateAssetsPage";
 import ScrollToTop from "./components/utils/ScrollToTop";
 import { Analytics } from "@vercel/analytics/react";
 import AnnouncementModal from "./components/ui/AnnouncementModal";
@@ -69,6 +70,10 @@ function App() {
               />
               <Route path="/comparison" element={<CandidateComparePage />} />
               <Route path="/voting-info" element={<VotingInfoPage />} />
+              <Route
+                path="/candidate-assets"
+                element={<CandidateAssetsPage />}
+              />
             </Routes>
           </main>
           <Footer />
