@@ -56,8 +56,8 @@ const CandidateAssetsPage: React.FC = () => {
           {/* 왼쪽 사이드바 - 후보자 선택 및 필터 */}
           <div className="lg:col-span-1">
             <div className="space-y-6">
-              {/* 필터 및 검색 영역 */}
-              <div className="rounded-lg bg-white shadow overflow-hidden">
+              {/* 필터 및 검색 영역 - overflow-visible로 변경하여 드롭다운이 잘리지 않도록 함 */}
+              <div className="rounded-lg bg-white shadow overflow-visible">
                 <AssetTableHeader
                   selectAll={selectAll}
                   handleSelectAll={handleSelectAll}

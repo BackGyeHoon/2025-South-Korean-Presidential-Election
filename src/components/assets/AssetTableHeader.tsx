@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 
 interface AssetTableHeaderProps {
   selectAll: boolean;
@@ -21,6 +21,30 @@ export const AssetTableHeader: React.FC<AssetTableHeaderProps> = ({
   dropdownOpen,
   setDropdownOpen,
 }) => {
+  // 드롭다운 외부 클릭 감지를 위한 ref
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // 외부 클릭 감지 이벤트 핸들러
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node) &&
+        dropdownOpen
+      ) {
+        setDropdownOpen(false);
+      }
+    };
+
+    // 이벤트 리스너 등록
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // 컴포넌트 언마운트 시 이벤트 리스너 제거
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [dropdownOpen, setDropdownOpen]);
+
   // 자산 필터 옵션
   const assetFilterOptions = [
     { id: 0, label: "전체", description: "모든 후보자" },
@@ -50,7 +74,7 @@ export const AssetTableHeader: React.FC<AssetTableHeaderProps> = ({
         </div>
 
         {/* 자산 필터 드롭다운 */}
-        <div className="relative inline-block">
+        <div className="relative inline-block" ref={dropdownRef}>
           <button
             type="button"
             className="inline-flex w-full sm:w-auto justify-between items-center gap-x-1 rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
@@ -67,9 +91,18 @@ export const AssetTableHeader: React.FC<AssetTableHeaderProps> = ({
             </span>
           </button>
 
-          {/* 드롭다운 메뉴 */}
+          {/* 드롭다운 메뉴 - z-index 높이고 위치 상대값 조정 */}
           {dropdownOpen && (
-            <div className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+            <div
+              className="absolute right-0 z-50 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+              style={{
+                position: "absolute",
+                top: "100%",
+                right: 0,
+                maxHeight: "300px",
+                overflowY: "auto",
+              }}
+            >
               <div className="py-1">
                 {assetFilterOptions.map((option) => (
                   <button
