@@ -2,7 +2,7 @@ import { CandidateAsset } from "../types/assets";
 import candidatesData from "./candidates.json";
 
 // 문자열 또는 숫자를 반드시 숫자로 변환하는 함수
-const ensureNumber = (value: string | number | undefined): number => {
+const ensureNumber = (value: string | number | undefined | null): number => {
   if (typeof value === "number") return value;
   if (!value || value === "정보 없음") return 0;
   const parsed = parseFloat(value);
@@ -11,7 +11,11 @@ const ensureNumber = (value: string | number | undefined): number => {
 
 // 후보자 데이터에서 자산 정보만 추출하여 가공
 const assetsData: CandidateAsset[] = candidatesData
-  .filter((candidate) => candidate.assets) // assets 정보가 있는 후보만 필터링
+  .filter(
+    (candidate) =>
+      candidate.assets && // assets 정보가 있는 후보만 필터링
+      candidate.isActive !== false // isActive가 false인 후보자 제외
+  )
   .map((candidate) => {
     // 자산 총액 정보 추출 (없으면 0으로 변환)
     const totalAssets = ensureNumber(candidate.assets?.totalAssets);

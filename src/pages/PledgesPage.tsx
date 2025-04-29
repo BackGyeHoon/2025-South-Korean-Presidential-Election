@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import { CANDIDATES } from "../data/candidates";
 
 const PledgesPage = () => {
-  const [selectedCategory, setSelectedCategory] = React.useState("economy");
+  // 기본 카테고리를 '모든 공약'으로 설정
+  const [selectedCategory, setSelectedCategory] = React.useState("all");
   const [comparisonMode, setComparisonMode] = React.useState(false);
   const [selectedCandidates, setSelectedCandidates] = React.useState<string[]>(
     []
@@ -20,10 +21,30 @@ const PledgesPage = () => {
     setRandomizedCandidates(shuffled);
   }, []);
 
-  const categories = CANDIDATES[0].categories.map((cat) => ({
-    id: cat.id,
-    title: cat.title,
-  }));
+  // 모든 후보자의 카테고리를 모아서 중복 제거
+  const categories = React.useMemo(() => {
+    const allCategories = new Map();
+
+    // 모든 후보자의 카테고리를 수집
+    CANDIDATES.forEach((candidate) => {
+      candidate.categories.forEach((cat) => {
+        if (!allCategories.has(cat.id)) {
+          allCategories.set(cat.id, cat.title);
+        }
+      });
+    });
+
+    // '모든 공약 보기' 카테고리를 맨 앞에 추가
+    const categoriesArray = [
+      { id: "all", title: "모든 공약" },
+      ...Array.from(allCategories).map(([id, title]) => ({
+        id,
+        title,
+      })),
+    ];
+
+    return categoriesArray;
+  }, []);
 
   // 페이지 상단으로 스크롤하는 함수
   const scrollToTop = () => {
@@ -107,6 +128,81 @@ const PledgesPage = () => {
     );
   };
 
+  // 특정 후보자와 카테고리 ID에 맞는 공약 리스트 렌더링
+  const renderCandidatePledges = (
+    candidate: (typeof CANDIDATES)[number],
+    categoryId: string
+  ) => {
+    if (categoryId === "all") {
+      // 모든 공약 보기 모드일 때 - 모든 카테고리의 공약 표시
+      return (
+        <>
+          {candidate.categories.map((category) => (
+            <div key={category.id} className="mb-6">
+              <h3 className="text-lg font-semibold mb-3 pb-2 border-b border-gray-200">
+                {categories.find((c) => c.id === category.id)?.title ||
+                  category.title}{" "}
+                분야
+              </h3>
+              <div className="space-y-4">
+                {category.pledges.map((pledge) => (
+                  <div
+                    key={pledge.id}
+                    className="p-4 rounded-lg bg-gray-50 border border-gray-100"
+                  >
+                    <div className="flex justify-between items-start">
+                      <h4 className="font-medium mb-2">{pledge.title}</h4>
+                      <div
+                        className={`w-4 h-4 rounded-full ${
+                          pledge.isComplete ? "bg-green-500" : "bg-gray-300"
+                        }`}
+                      ></div>
+                    </div>
+                    <p className="text-sm text-text-light mb-2">
+                      {pledge.description}
+                    </p>
+                    <p className="text-xs text-text-light">{pledge.details}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </>
+      );
+    } else {
+      // 특정 카테고리 선택 모드
+      const selectedCategory = candidate.categories.find(
+        (cat) => cat.id === categoryId
+      );
+
+      if (!selectedCategory) return null;
+
+      return (
+        <div className="space-y-4">
+          {selectedCategory.pledges.map((pledge) => (
+            <div
+              key={pledge.id}
+              className="p-4 rounded-lg bg-gray-50 border border-gray-100"
+            >
+              <div className="flex justify-between items-start">
+                <h4 className="font-medium mb-2">{pledge.title}</h4>
+                <div
+                  className={`w-4 h-4 rounded-full ${
+                    pledge.isComplete ? "bg-green-500" : "bg-gray-300"
+                  }`}
+                ></div>
+              </div>
+              <p className="text-sm text-text-light mb-2">
+                {pledge.description}
+              </p>
+              <p className="text-xs text-text-light">{pledge.details}</p>
+            </div>
+          ))}
+        </div>
+      );
+    }
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-10">
@@ -175,88 +271,118 @@ const PledgesPage = () => {
               * 후보자는 무작위 순서로 표시됩니다.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {randomizedCandidates.map((candidate) => (
-                <div
-                  key={candidate.id}
-                  className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden"
-                >
-                  {/* 후보자 정보 상단 */}
-                  <div
-                    className="h-2"
-                    style={{ backgroundColor: candidate.color }}
-                  ></div>
-                  <div className="p-6">
-                    <div className="flex items-center mb-6">
-                      <div className="w-16 h-16 rounded-full overflow-hidden bg-gray-100 mr-4">
-                        <img
-                          src={candidate.image}
-                          alt={candidate.name}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div>
-                        <h2 className="text-xl font-bold">{candidate.name}</h2>
-                        <p className="text-text-light">{candidate.party}</p>
-                        <Button
-                          asChild
-                          variant="ghost"
-                          className="text-primary mt-2 p-0"
-                        >
-                          <Link to={`/candidates/${candidate.id}`}>
-                            자세히 보기
-                          </Link>
-                        </Button>
+              {randomizedCandidates.map((candidate) => {
+                // '모든 공약 보기' 선택 시 모든 후보자 표시
+                if (selectedCategory === "all") {
+                  return (
+                    <div
+                      key={candidate.id}
+                      className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden"
+                    >
+                      {/* 후보자 정보 상단 */}
+                      <div
+                        className="h-2"
+                        style={{ backgroundColor: candidate.color }}
+                      ></div>
+                      <div className="p-6">
+                        <div className="flex items-center mb-6">
+                          <div className="w-16 h-16 rounded-full overflow-hidden bg-gray-100 mr-4">
+                            <img
+                              src={candidate.image}
+                              alt={candidate.name}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div>
+                            <h2 className="text-xl font-bold">
+                              {candidate.name}
+                            </h2>
+                            <p className="text-text-light">{candidate.party}</p>
+                            <Button
+                              asChild
+                              variant="ghost"
+                              className="text-primary mt-2 p-0"
+                            >
+                              <Link to={`/candidates/${candidate.id}`}>
+                                자세히 보기
+                              </Link>
+                            </Button>
+                          </div>
+                        </div>
+
+                        {/* 공약 리스트 렌더링 */}
+                        {renderCandidatePledges(candidate, selectedCategory)}
                       </div>
                     </div>
+                  );
+                }
 
-                    {/* 공약 리스트 */}
-                    <div>
-                      <h3 className="text-lg font-semibold mb-4">
-                        {
-                          categories.find((c) => c.id === selectedCategory)
-                            ?.title
-                        }{" "}
-                        분야 공약
-                      </h3>
+                // 현재 선택된 카테고리가 이 후보자의 카테고리에 있는지 확인
+                const hasCategory = candidate.categories.some(
+                  (cat) => cat.id === selectedCategory
+                );
 
-                      <div className="space-y-4">
-                        {candidate.categories
-                          .find((cat) => cat.id === selectedCategory)
-                          ?.pledges.map((pledge) => (
-                            <div
-                              key={pledge.id}
-                              className="p-4 rounded-lg bg-gray-50 border border-gray-100"
-                            >
-                              <div className="flex justify-between items-start">
-                                <h4 className="font-medium mb-2">
-                                  {pledge.title}
-                                </h4>
-                                <div
-                                  className={`w-4 h-4 rounded-full ${
-                                    pledge.isComplete
-                                      ? "bg-green-500"
-                                      : "bg-gray-300"
-                                  }`}
-                                ></div>
-                              </div>
-                              <p className="text-sm text-text-light mb-2">
-                                {pledge.description}
-                              </p>
-                              <p className="text-xs text-text-light">
-                                {pledge.details}
-                              </p>
-                            </div>
-                          ))}
+                // 없으면 렌더링 안 함
+                if (!hasCategory) return null;
+
+                return (
+                  <div
+                    key={candidate.id}
+                    className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden"
+                  >
+                    {/* 후보자 정보 상단 */}
+                    <div
+                      className="h-2"
+                      style={{ backgroundColor: candidate.color }}
+                    ></div>
+                    <div className="p-6">
+                      <div className="flex items-center mb-6">
+                        <div className="w-16 h-16 rounded-full overflow-hidden bg-gray-100 mr-4">
+                          <img
+                            src={candidate.image}
+                            alt={candidate.name}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div>
+                          <h2 className="text-xl font-bold">
+                            {candidate.name}
+                          </h2>
+                          <p className="text-text-light">{candidate.party}</p>
+                          <Button
+                            asChild
+                            variant="ghost"
+                            className="text-primary mt-2 p-0"
+                          >
+                            <Link to={`/candidates/${candidate.id}`}>
+                              자세히 보기
+                            </Link>
+                          </Button>
+                        </div>
+                      </div>
+
+                      {/* 공약 리스트 - 선택된 카테고리만 */}
+                      <div>
+                        <h3 className="text-lg font-semibold mb-4">
+                          {
+                            categories.find((c) => c.id === selectedCategory)
+                              ?.title
+                          }{" "}
+                          분야 공약
+                        </h3>
+
+                        {/* 공약 리스트 렌더링 */}
+                        {renderCandidatePledges(candidate, selectedCategory)}
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </>
         )}
 
-        {/* 공약 비교 모드 */}
+        {/* 공약 비교 모드 - 기존 코드 유지 */}
         {comparisonMode && (
           <div>
             {/* 후보자 선택 UI */}
@@ -337,44 +463,112 @@ const PledgesPage = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {CANDIDATES[0].categories
-                        .find((cat) => cat.id === selectedCategory)
-                        ?.pledges.map((pledge) => {
+                      {/* 선택된 카테고리 공약 비교 */}
+                      {(() => {
+                        // 선택된 후보들의 현재 카테고리에 있는 모든 공약 ID를 모음
+                        const pledgeIds = new Set();
+
+                        // '모든 공약 보기' 모드인 경우와 특정 카테고리 선택 모드 구분
+                        if (selectedCategory === "all") {
+                          // 모든 카테고리의 모든 공약 수집
+                          selectedCandidates.forEach((candidateId) => {
+                            const candidate = CANDIDATES.find(
+                              (c) => c.id === candidateId
+                            );
+                            candidate?.categories.forEach((category) => {
+                              category.pledges.forEach((pledge) =>
+                                pledgeIds.add(`${category.id}-${pledge.id}`)
+                              );
+                            });
+                          });
+                        } else {
+                          // 특정 카테고리의 공약만 수집
+                          selectedCandidates.forEach((candidateId) => {
+                            const candidate = CANDIDATES.find(
+                              (c) => c.id === candidateId
+                            );
+                            const category = candidate?.categories.find(
+                              (cat) => cat.id === selectedCategory
+                            );
+                            category?.pledges.forEach((pledge) =>
+                              pledgeIds.add(pledge.id)
+                            );
+                          });
+                        }
+
+                        // 모든 공약에 대해 각 후보의 공약을 비교
+                        return Array.from(pledgeIds).map((pledgeId) => {
+                          const isCompositeId =
+                            typeof pledgeId === "string" &&
+                            pledgeId.includes("-");
+                          const [categoryId, simplePledgeId] = isCompositeId
+                            ? (pledgeId as string).split("-")
+                            : [selectedCategory, pledgeId];
+
+                          // 첫 번째 공약 제목을 찾기 (표시용)
+                          let pledgeTitle = "";
+                          let categoryTitle = "";
+
+                          for (const candidateId of selectedCandidates) {
+                            const candidate = CANDIDATES.find(
+                              (c) => c.id === candidateId
+                            );
+                            const category = candidate?.categories.find(
+                              (cat) => cat.id === categoryId
+                            );
+                            const pledge = category?.pledges.find(
+                              (p) => p.id === (simplePledgeId as string)
+                            );
+                            if (pledge && category) {
+                              pledgeTitle = pledge.title;
+                              categoryTitle = category.title;
+                              break;
+                            }
+                          }
+
                           return (
                             <tr
-                              key={pledge.id}
+                              key={pledgeId as string}
                               className="border-t border-gray-100"
                             >
                               <td className="p-4 font-medium">
-                                {pledge.title}
+                                {selectedCategory === "all" && (
+                                  <div className="text-xs text-blue-500 mb-1">
+                                    {categoryTitle}
+                                  </div>
+                                )}
+                                {pledgeTitle}
                               </td>
                               {selectedCandidates.map((candidateId) => {
                                 const candidate = CANDIDATES.find(
                                   (c) => c.id === candidateId
                                 )!;
-                                const candidatePledge = candidate.categories
-                                  .find((cat) => cat.id === selectedCategory)
-                                  ?.pledges.find((p) => p.id === pledge.id);
+                                const category = candidate.categories.find(
+                                  (cat) => cat.id === categoryId
+                                );
+                                const pledge = category?.pledges.find(
+                                  (p) => p.id === (simplePledgeId as string)
+                                );
 
                                 return (
                                   <td
-                                    key={`${candidateId}-${pledge.id}`}
+                                    key={`${candidateId}-${pledgeId}`}
                                     className="p-4"
                                   >
-                                    {candidatePledge ? (
+                                    {pledge ? (
                                       <div>
                                         <div className="flex items-center justify-between mb-1">
-                                          <p>{candidatePledge.description}</p>
+                                          <p>{pledge.description}</p>
                                           <div
                                             className={`w-3 h-3 rounded-full ${
-                                              candidatePledge.isComplete
+                                              pledge.isComplete
                                                 ? "bg-green-500"
                                                 : "bg-gray-300"
                                             }`}
                                           ></div>
                                         </div>
                                         <p className="text-sm text-text-light">
-                                          {candidatePledge.details}
+                                          {pledge.details}
                                         </p>
                                       </div>
                                     ) : (
@@ -387,84 +581,156 @@ const PledgesPage = () => {
                               })}
                             </tr>
                           );
-                        })}
+                        });
+                      })()}
                     </tbody>
                   </table>
                 </div>
 
                 {/* 카드 형태 UI (모바일 화면용) */}
                 <div className="md:hidden space-y-8">
-                  {CANDIDATES[0].categories
-                    .find((cat) => cat.id === selectedCategory)
-                    ?.pledges.map((pledge) => (
-                      <div
-                        key={pledge.id}
-                        className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden"
-                      >
-                        <div className="p-4 bg-gray-50 border-b border-gray-200">
-                          <h3 className="font-medium">{pledge.title}</h3>
-                        </div>
+                  {(() => {
+                    // 선택된 후보들의 현재 카테고리에 있는 모든 공약 ID를 모음
+                    const pledgeIds = new Set();
 
-                        <div className="divide-y divide-gray-100">
-                          {selectedCandidates.map((candidateId) => {
-                            const candidate = CANDIDATES.find(
-                              (c) => c.id === candidateId
-                            )!;
-                            const candidatePledge = candidate.categories
-                              .find((cat) => cat.id === selectedCategory)
-                              ?.pledges.find((p) => p.id === pledge.id);
+                    // '모든 공약 보기' 모드인 경우와 특정 카테고리 선택 모드 구분
+                    if (selectedCategory === "all") {
+                      // 모든 카테고리의 모든 공약 수집
+                      selectedCandidates.forEach((candidateId) => {
+                        const candidate = CANDIDATES.find(
+                          (c) => c.id === candidateId
+                        );
+                        candidate?.categories.forEach((category) => {
+                          category.pledges.forEach((pledge) =>
+                            pledgeIds.add(`${category.id}-${pledge.id}`)
+                          );
+                        });
+                      });
+                    } else {
+                      // 특정 카테고리의 공약만 수집
+                      selectedCandidates.forEach((candidateId) => {
+                        const candidate = CANDIDATES.find(
+                          (c) => c.id === candidateId
+                        );
+                        const category = candidate?.categories.find(
+                          (cat) => cat.id === selectedCategory
+                        );
+                        category?.pledges.forEach((pledge) =>
+                          pledgeIds.add(pledge.id)
+                        );
+                      });
+                    }
 
-                            return (
-                              <div
-                                key={`${candidateId}-${pledge.id}`}
-                                className="p-4"
-                              >
-                                <div className="flex items-center mb-3">
-                                  <div
-                                    className="w-4 h-4 rounded-full mr-2"
-                                    style={{ backgroundColor: candidate.color }}
-                                  ></div>
-                                  <div className="w-6 h-6 rounded-full overflow-hidden bg-gray-100 mr-2">
-                                    <img
-                                      src={candidate.image}
-                                      alt={candidate.name}
-                                      className="w-full h-full object-cover"
-                                    />
-                                  </div>
-                                  <span className="font-medium">
-                                    {candidate.name}
-                                  </span>
-                                </div>
+                    // 모든 공약에 대해 모바일 카드 생성
+                    return Array.from(pledgeIds).map((pledgeId) => {
+                      const isCompositeId =
+                        typeof pledgeId === "string" && pledgeId.includes("-");
+                      const [categoryId, simplePledgeId] = isCompositeId
+                        ? (pledgeId as string).split("-")
+                        : [selectedCategory, pledgeId];
 
-                                {candidatePledge ? (
-                                  <div>
-                                    <div className="flex items-start justify-between mb-1">
-                                      <p className="text-sm">
-                                        {candidatePledge.description}
-                                      </p>
-                                      <div
-                                        className={`w-3 h-3 rounded-full ml-2 mt-1 flex-shrink-0 ${
-                                          candidatePledge.isComplete
-                                            ? "bg-green-500"
-                                            : "bg-gray-300"
-                                        }`}
-                                      ></div>
-                                    </div>
-                                    <p className="text-xs text-text-light mt-2">
-                                      {candidatePledge.details}
-                                    </p>
-                                  </div>
-                                ) : (
-                                  <p className="text-text-light italic text-sm">
-                                    해당 공약 없음
-                                  </p>
-                                )}
+                      // 첫 번째 공약 제목을 찾기 (표시용)
+                      let pledgeTitle = "";
+                      let categoryTitle = "";
+
+                      for (const candidateId of selectedCandidates) {
+                        const candidate = CANDIDATES.find(
+                          (c) => c.id === candidateId
+                        );
+                        const category = candidate?.categories.find(
+                          (cat) => cat.id === categoryId
+                        );
+                        const pledge = category?.pledges.find(
+                          (p) => p.id === (simplePledgeId as string)
+                        );
+                        if (pledge && category) {
+                          pledgeTitle = pledge.title;
+                          categoryTitle = category.title;
+                          break;
+                        }
+                      }
+
+                      return (
+                        <div
+                          key={pledgeId as string}
+                          className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden"
+                        >
+                          <div className="p-4 bg-gray-50 border-b border-gray-200">
+                            {selectedCategory === "all" && (
+                              <div className="text-xs text-blue-500 mb-1">
+                                {categoryTitle}
                               </div>
-                            );
-                          })}
+                            )}
+                            <h3 className="font-medium">{pledgeTitle}</h3>
+                          </div>
+
+                          <div className="divide-y divide-gray-100">
+                            {selectedCandidates.map((candidateId) => {
+                              const candidate = CANDIDATES.find(
+                                (c) => c.id === candidateId
+                              )!;
+                              const category = candidate.categories.find(
+                                (cat) => cat.id === categoryId
+                              );
+                              const pledge = category?.pledges.find(
+                                (p) => p.id === (simplePledgeId as string)
+                              );
+
+                              return (
+                                <div
+                                  key={`${candidateId}-${pledgeId}`}
+                                  className="p-4"
+                                >
+                                  <div className="flex items-center mb-3">
+                                    <div
+                                      className="w-4 h-4 rounded-full mr-2"
+                                      style={{
+                                        backgroundColor: candidate.color,
+                                      }}
+                                    ></div>
+                                    <div className="w-6 h-6 rounded-full overflow-hidden bg-gray-100 mr-2">
+                                      <img
+                                        src={candidate.image}
+                                        alt={candidate.name}
+                                        className="w-full h-full object-cover"
+                                      />
+                                    </div>
+                                    <span className="font-medium">
+                                      {candidate.name}
+                                    </span>
+                                  </div>
+
+                                  {pledge ? (
+                                    <div>
+                                      <div className="flex items-start justify-between mb-1">
+                                        <p className="text-sm">
+                                          {pledge.description}
+                                        </p>
+                                        <div
+                                          className={`w-3 h-3 rounded-full ml-2 mt-1 flex-shrink-0 ${
+                                            pledge.isComplete
+                                              ? "bg-green-500"
+                                              : "bg-gray-300"
+                                          }`}
+                                        ></div>
+                                      </div>
+                                      <p className="text-xs text-text-light mt-2">
+                                        {pledge.details}
+                                      </p>
+                                    </div>
+                                  ) : (
+                                    <p className="text-text-light italic text-sm">
+                                      해당 공약 없음
+                                    </p>
+                                  )}
+                                </div>
+                              );
+                            })}
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    });
+                  })()}
                 </div>
 
                 <div className="mt-6 text-right">
