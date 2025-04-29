@@ -31,6 +31,14 @@
             "description": "영남권 지역별 특화 발전을 위한 전략적 투자를 실시합니다.",
             "details": "부산·울산·경남을 해양수도로 육성, 대구·경북 지역을 글로벌 이차전지 공급망의 핵심 거점으로 조성",
             "isComplete": false
+          },
+          {
+            "id": "economy-4",
+            "title": "1등 반도체 국가 건설",
+            "description": "반도체 산업 육성을 위한 특별법 제정을 추진합니다.",
+            "details": "반도체 특별법 신속 제정, 반도체 산업 클러스터 확대, 관련 기업 세제 지원 강화",
+            "isComplete": false,
+            "announced": "2025년 4월"
           }
         ]
       },
@@ -195,7 +203,7 @@
             "id": "economy-3",
             "title": "5대 메가폴리스 조성",
             "description": "전국에 5개의 서울을 만들겠다는 국토 균형 발전 구상입니다.",
-            "details": "AI, 바이오, 에너지, 미래차, 반도체 등 5대 전략산업 중심으로 산업·대학·연구소·청년인재·민간자본 집중 육성",
+            "details": "수도권(소프트웨어·자율주행), 충청권(반도체), 대경권(정보통신기술·스마트산업), 호남권(에너지·미래차), 동남권(바이오·해양) 권역별 특화 산업 육성, 권역별 국가전략산업 클러스터 조성으로 일자리 창출",
             "isComplete": false,
             "announced": "2025년 4월 22일"
           }
@@ -301,7 +309,7 @@
             "id": "economy-2",
             "title": "전국 5대 광역권 GTX 구축",
             "description": "전국 5대 광역권에 광역급행철도(GTX)를 구축합니다.",
-            "details": "교통 인프라 확충을 통한 국토 균형 발전 도모",
+            "details": "서울 1시간대 생활권 구축, 수도권의 GTX 시스템을 부산·울산·경남, 대구·경북, 광주·전남, 대전·세종·충남 등 전국 5대 광역권으로 확대",
             "isComplete": false,
             "announced": "2025년 4월 22일"
           }
@@ -687,240 +695,6 @@
         "name": "미공개",
         "type": "아파트",
         "estimatedPrice": 1000
-      },
-      "source": "아시아경제"
-    }
-  },
-  {
-    "id": "kim-kyoung-soo",
-    "name": "김경수",
-    "party": "더불어민주당",
-    "image": "https://search.pstatic.net/common?type=b&size=216&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F201806%2F2018062011382676.jpg",
-    "color": "#0050C9",
-    "description": "전 경남도지사로, 더불어민주당 내 비명계 인사로 분류됩니다. 과거 여론 조작 사건으로 유죄 판결을 받았으나, 이번 선거에서 정치 복귀를 시도하고 있습니다.",
-    "categories": [
-      {
-        "id": "economy",
-        "title": "경제",
-        "pledges": [
-          {
-            "id": "economy-1",
-            "title": "디지털 전환 가속화",
-            "description": "디지털 기술을 통한 산업 혁신과 일자리 창출을 추진합니다.",
-            "details": "디지털 전환 지원 센터 설립, 중소기업 디지털화 지원 확대",
-            "isComplete": false
-          }
-        ]
-      },
-      {
-        "id": "welfare",
-        "title": "복지",
-        "pledges": [
-          {
-            "id": "welfare-1",
-            "title": "사회안전망 강화",
-            "description": "취약계층을 위한 복지 지원을 확대합니다.",
-            "details": "기초생활보장 수급자 확대, 노인 일자리 확대",
-            "isComplete": false
-          },
-          {
-            "id": "welfare-2",
-            "title": "국민기본생활보장제 도입",
-            "description": "전 국민 최저소득 보장을 통한 절대빈곤 방지 제도를 도입합니다.",
-            "details": "전 국민에게 중위소득 40% 수준의 최저소득 보장",
-            "isComplete": false
-          }
-        ]
-      },
-      {
-        "id": "defense",
-        "title": "국방",
-        "pledges": [
-          {
-            "id": "defense-1",
-            "title": "병역제도 개편",
-            "description": "징병제와 모병제를 혼용하는 병역제도를 도입합니다.",
-            "details": "인구 감소에 대응하는 혼합형 병역제도 구축",
-            "isComplete": false
-          }
-        ]
-      },
-      {
-        "id": "politics",
-        "title": "정치",
-        "pledges": [
-          {
-            "id": "politics-1",
-            "title": "검찰청 폐지 및 수사·기소 분리",
-            "description": "수사와 기소 기능을 분리한 새로운 사법체계를 구축합니다.",
-            "details": "검찰청 폐지, 중앙수사청과 기소청 신설",
-            "isComplete": false
-          }
-        ]
-      },
-      {
-        "id": "education",
-        "title": "교육",
-        "pledges": [
-          {
-            "id": "education-1",
-            "title": "지역 교육 균형 발전",
-            "description": "지방 교육의 질적 향상을 위한 정책을 추진합니다.",
-            "details": "지방 대학 육성, 교육 인프라 균형 배분",
-            "isComplete": false
-          }
-        ]
-      }
-    ],
-    "additional_policies": {
-      "경제": ["AI 분야에 100조 원 투자 및 국가전략기술기금 50조 원 조성"]
-    },
-    "details": {
-      "english_name": "Kim Kyoung-soo",
-      "age": 58,
-      "education": "서울대학교 언론정보학과 졸업",
-      "career": [
-        "청와대 대변인",
-        "경상남도지사",
-        "더불어민주당 전략기획위원장"
-      ],
-      "achievements": [
-        "지역 산업 혁신 클러스터 조성",
-        "청년 일자리 창출 프로그램 운영",
-        "디지털 민주주의 확산"
-      ],
-      "sns": {
-        "facebook": "https://www.facebook.com/opensky86",
-        "instagram": "https://www.instagram.com/opensky86",
-        "youtube": "https://www.youtube.com/user/Gimhaero",
-        "twitter": "https://x.com/opensky86"
-      }
-    }
-  },
-  {
-    "id": "kim-dong-yeon",
-    "name": "김동연",
-    "party": "더불어민주당",
-    "image": "https://search.pstatic.net/common?type=b&size=216&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F202204%2F20220427221303612.jpg",
-    "color": "#0050C9",
-    "description": "경제 관료 출신으로, 다양한 정부에서 고위직을 역임한 후 경기도지사로 당선되었습니다. 실용적 중도 개혁 성향을 지니며, '유쾌한 반란'을 슬로건으로 정치 개혁과 경제 혁신을 강조하고 있습니다.",
-    "categories": [
-      {
-        "id": "economy",
-        "title": "경제",
-        "pledges": [
-          {
-            "id": "economy-1",
-            "title": "지역 균형 발전 추진",
-            "description": "경기도 내 지역 간 격차 해소를 위한 균형 발전 정책을 추진합니다.",
-            "details": "경기북도 설치 추진, 지역 맞춤형 산업 육성",
-            "isComplete": false
-          },
-          {
-            "id": "economy-2",
-            "title": "중소기업 및 소상공인 지원 강화",
-            "description": "중소기업과 소상공인의 경쟁력 강화를 위한 지원 정책을 확대합니다.",
-            "details": "금융 지원 확대, 규제 완화, 창업 지원 프로그램 운영",
-            "isComplete": false
-          },
-          {
-            "id": "economy-3",
-            "title": "수도권 및 호남 지역 발전 전략",
-            "description": "수도권과 호남 지역의 특화 발전을 위한 맞춤형 전략을 추진합니다.",
-            "details": "경기북부특별자치도 설치, 수도권 1시간대 출근 교통망 구축, 서해안 RE100 라인 투자, 5·18 정신의 헌법 전문 수록",
-            "isComplete": false
-          }
-        ]
-      },
-      {
-        "id": "welfare",
-        "title": "복지",
-        "pledges": [
-          {
-            "id": "welfare-1",
-            "title": "사회 안전망 강화",
-            "description": "취약계층을 위한 복지 지원을 확대합니다.",
-            "details": "기초생활보장 수급자 확대, 노인 일자리 확대",
-            "isComplete": false
-          }
-        ]
-      },
-      {
-        "id": "labor",
-        "title": "노동",
-        "pledges": [
-          {
-            "id": "labor-1",
-            "title": "비정규직 청년 지원",
-            "description": "비정규직 청년들의 재충전과 자기계발을 위한 제도를 도입합니다.",
-            "details": "비정규직으로 7년간 일한 청년에게 6개월간 유급휴가를 제공하는 '노동시간 저축계좌' 제도 도입",
-            "isComplete": false
-          }
-        ]
-      },
-      {
-        "id": "defense",
-        "title": "국방",
-        "pledges": [
-          {
-            "id": "defense-1",
-            "title": "모병제 전환",
-            "description": "2035년까지 남녀 모두를 대상으로 한 모병제로 전환합니다.",
-            "details": "단계적 모병제 전환을 통한 군 현대화 및 효율화 추진",
-            "isComplete": false
-          }
-        ]
-      },
-      {
-        "id": "education",
-        "title": "교육",
-        "pledges": [
-          {
-            "id": "education-1",
-            "title": "교육 기회 균등화",
-            "description": "지역 간 교육 격차 해소를 위한 정책을 추진합니다.",
-            "details": "지방 대학 육성, 교육 인프라 균형 배분",
-            "isComplete": false
-          }
-        ]
-      }
-    ],
-    "additional_policies": {
-      "경제": ["경기도형 뉴딜 정책 추진", "디지털 전환을 통한 산업 혁신"],
-      "정치개혁": ["정치 세대교체 및 개혁 추진"],
-      "사회복지": ["청년 기본소득 도입 검토"]
-    },
-    "details": {
-      "english_name": "Kim Dong-yeon",
-      "age": 68,
-      "education": "덕수상업고등학교 졸업, 국제대학교 법학과 졸업, 서울대학교 행정대학원 행정학 석사, 미국 미시간대학교 정책학 석사 및 박사",
-      "career": [
-        "기획재정부 제2차관",
-        "국무조정실장",
-        "경제부총리 겸 기획재정부 장관",
-        "아주대학교 총장",
-        "제36대 경기도지사"
-      ],
-      "achievements": [
-        "혁신성장 정책 추진",
-        "경기도 균형 발전 정책 추진",
-        "청년 및 중소기업 지원 확대"
-      ],
-      "sns": {
-        "facebook": "https://www.facebook.com/DY.AfterYou",
-        "instagram": "https://www.instagram.com/kimdongyeon_dy",
-        "youtube": "https://www.youtube.com/channel/UCDBTesvGqBsob4BsOc41hqA"
-      }
-    },
-    "assets": {
-      "totalAssets": 3500,
-      "housing": {
-        "count": 1,
-        "ownership": "배우자 명의",
-        "location": "서울 강남구",
-        "name": "미공개",
-        "type": "아파트",
-        "estimatedPrice": 3500
       },
       "source": "아시아경제"
     }
