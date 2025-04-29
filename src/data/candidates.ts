@@ -46,7 +46,14 @@ export type Candidate = {
   categories: Category[];
   additional_policies?: AdditionalPolicies;
   details?: CandidateDetails;
+  isActive?: boolean; // 후보자의 활동 상태 (경선 탈락 여부)
 };
 
 // JSON 파일에서 불러온 데이터 타입 캐스팅
-export const CANDIDATES = candidatesData as unknown as Candidate[];
+const allCandidates = candidatesData as unknown as Candidate[];
+
+// isActive가 false가 아닌 후보자만 필터링하여 내보냄
+// isActive 속성이 없는 경우(기존 데이터)에는 기본적으로 활동 중인 것으로 간주
+export const CANDIDATES = allCandidates.filter(
+  (candidate) => candidate.isActive !== false
+);

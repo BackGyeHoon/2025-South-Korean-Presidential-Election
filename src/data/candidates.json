@@ -397,6 +397,7 @@
     "image": "https://search.pstatic.net/common?type=b&size=216&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2FprofileImg%2F89f4aee1-2d0b-41ea-9729-8eadf3053928.jpg",
     "color": "#E61E2B",
     "description": "과거 대선에 세 차례 출마한 경험이 있습니다. 이번 선거에서는 인공지능 등 신기술을 통한 경제 혁신을 강조하며 출마를 선언했습니다.",
+    "isActive": false,
     "categories": [
       {
         "id": "economy",
@@ -489,6 +490,7 @@
     "image": "https://search.pstatic.net/common?type=b&size=216&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F202110%2F20211002100802747.jpg",
     "color": "#E61E2B",
     "description": "전 대구시장으로, 국민의힘 경선에 참여하기 위해 출마를 선언했습니다. 보수 진영의 전통적인 가치를 강조하며, 강한 리더십을 내세우고 있습니다.",
+    "isActive": false,
     "categories": [
       {
         "id": "economy",
