@@ -3,10 +3,21 @@
     "id": "lee-jae-myung",
     "name": "이재명",
     "party": "더불어민주당",
-    "image": "https://tse2.mm.bing.net/th?id=OIP.3xzHk9le72iVFGCiHMyTEAHaKN&w=474&h=474&c=7",
+    "image": "https://search.pstatic.net/common?type=n&size=174x232&quality=95&direct=true&src=https%3A%2F%2Felection.pstatic.net%2Fimage%2Fupload%2Fnep%2Fcandidate%2F2025%2F05%2F10%2F200006%2F100153692.JPG%3Ftype%3Dface_l_300_400%26cache%3D1",
     "color": "#0050C9",
     "description": "2022년 대선에서 근소한 차이로 패배한 후, 경제 성장과 기술 투자, 사회 통합을 강조하며 출마를 선언했습니다. 현재 여론조사에서 선두를 달리고 있으나, 여러 건의 법적 문제에 직면해 있습니다.",
     "isActive": true,
+    "unification": {
+      "isUnifiedCandidate": true,
+      "unifiedWith": [
+        {
+          "name": "김재연",
+          "party": "진보당"
+        }
+      ],
+      "unificationDate": "2025-05-09",
+      "unificationStatement": "진보당 김재연 후보가 대선 후보직을 사퇴하고 이재명 후보를 지지하며, 진보 5당 및 시민연대가 이재명 후보를 ‘광장 대선 후보’로 선정해 지지 선언을 했습니다."
+    },
     "policy_reception": {
       "most_criticized": [
         {
@@ -233,7 +244,7 @@
     "id": "kim-moon-soo",
     "name": "김문수",
     "party": "국민의힘",
-    "image": "https://search.pstatic.net/common?type=b&size=216&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2FprofileImg%2F4e0a862d-fa43-48ce-84f5-d37ad4dc1ceb.png",
+    "image": "https://search.pstatic.net/common?type=n&size=174x232&quality=95&direct=true&src=https%3A%2F%2Felection.pstatic.net%2Fimage%2Fupload%2Fnep%2Fcandidate%2F2025%2F05%2F11%2F200006%2F100153710.JPG%3Ftype%3Dface_l_300_400%26cache%3D1",
     "color": "#E61E2B",
     "description": "전 경기도지사이자 노동부 장관을 지낸 인물로, 보수 진영의 대표 주자로 출마를 선언했습니다. 경제 위기 극복과 노동 시장 개혁을 주요 공약으로 내세우고 있습니다.",
     "isActive": true,
@@ -405,7 +416,7 @@
     "id": "lee-jun-seok",
     "name": "이준석",
     "party": "개혁신당",
-    "image": "https://search.pstatic.net/common?type=b&size=216&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F201612%2F20161208185919769.jpg",
+    "image": "https://search.pstatic.net/common?type=n&size=174x232&quality=95&direct=true&src=https%3A%2F%2Felection.pstatic.net%2Fimage%2Fupload%2Fnep%2Fcandidate%2F2025%2F05%2F10%2F200006%2F100153689.JPG%3Ftype%3Dface_l_300_400%26cache%3D1",
     "color": "#FF8200",
     "description": "개혁신당 대표로, 국민의힘 전 대표이기도 합니다. 젊은 세대의 지지를 바탕으로 정치 개혁과 세대 교체를 주장하며 출마를 선언했습니다.",
     "policy_reception": {
@@ -592,7 +603,7 @@
     "id": "kwon-young-guk",
     "name": "권영국",
     "party": "민주노동당",
-    "image": "https://i.namu.wiki/i/k1c4pe8vbLafRlUTTBVho6M7sEWBW_sKHzqk3qMLcQa1dC2SOUhL_kYxKcgkmrB_VEwrLEpY_QF2q6XZuH5DrprcKfhQklB1zsmX7eI_9WwXENhxNNzloTkImiYUWNEq_2HTBxL9kyyU-K2IppuFVA.webp",
+    "image": "https://search.pstatic.net/common?type=n&size=174x232&quality=95&direct=true&src=https%3A%2F%2Felection.pstatic.net%2Fimage%2Fupload%2Fnep%2Fcandidate%2F2025%2F05%2F10%2F200007%2F100153725.JPG%3Ftype%3Dface_l_300_400%26cache%3D1",
     "color": "#FFCD1E",
     "description": "민주노동당 대표. 노동·사회적 약자 권익, 기후위기 대응, 평등사회 실현을 내세움.",
     "isActive": true,
@@ -667,7 +678,7 @@
     "id": "gu-joo-wa",
     "name": "구주와",
     "party": "자유통일당",
-    "image": "https://i.namu.wiki/i/qNmMt5YtVsh2F6xKLccqs9b0sMfxIrcvkel0CXgVh6uxbLcpKNZS8NNsVzIw6EDPgfjhloc688oz-pR8n04wA_U0Khg24rIc7qweiv_CpHy_wBJl1DVbAUWXlzDP675RNRHJRWZeHXJ1B82vYs2-eQ.webp",
+    "image": "https://search.pstatic.net/common?type=n&size=174x232&quality=95&direct=true&src=https%3A%2F%2Felection.pstatic.net%2Fimage%2Fupload%2Fnep%2Fcandidate%2F2025%2F05%2F10%2F200007%2F100153735.JPG%3Ftype%3Dface_l_300_400%26cache%3D1",
     "color": "#1C3D7A",
     "description": "자유통일당 후보. 강경 보수, 안보, 자유시장경제 강조.",
     "isActive": true,
@@ -713,7 +724,7 @@
     "id": "hwang-kyo-ahn",
     "name": "황교안",
     "party": "무소속",
-    "image": "https://i.namu.wiki/i/th6T5-7IgiCDDrjhB8Nyuzi0plOhHYnhhvSJRMVxzTdJp7h9ytQgjDpCQ242YRLnIYiRxDEAlNw5Lv_JjCSDpPqIHI9rjyVm1CbW4xH1gOwhNtRYRe9HSQlVhHGYaMVOyt9OvDE0bbzOtTlnKYxdFQ.webp",
+    "image": "https://search.pstatic.net/common?type=n&size=174x232&quality=95&direct=true&src=https%3A%2F%2Felection.pstatic.net%2Fimage%2Fupload%2Fnep%2Fcandidate%2F2025%2F05%2F10%2F200006%2F100153708.JPG%3Ftype%3Dface_l_300_400%26cache%3D1",
     "color": "#808080",
     "description": "전 국무총리, 전 대통령 권한대행. 법치주의와 보수 가치 강조.",
     "isActive": true,
@@ -762,7 +773,7 @@
     "id": "song-jin-ho",
     "name": "송진호",
     "party": "무소속",
-    "image": "https://i.namu.wiki/i/sl59AQwhlXCJl0EtLKxIZ6wl4PlVpFlQi4x9WBR6UrvMGhkElBZJiSU6rd_JnbxMnm_xjk0bP3L8bICNMEkwPlNmHH3EcyKyzRPoudlXEAQMb9apfSaDKUo9f4tXcAAA0MqwLMOkQxAEEPml-Z8R2w.webp",
+    "image": "https://search.pstatic.net/common?type=n&size=174x232&quality=95&direct=true&src=https%3A%2F%2Felection.pstatic.net%2Fimage%2Fupload%2Fnep%2Fcandidate%2F2025%2F05%2F10%2F200007%2F100153722.JPG%3Ftype%3Dface_l_300_400%26cache%3D1",
     "color": "#808080",
     "description": "무소속 후보. 사회적 약자와 서민 정책에 집중.",
     "isActive": true,
