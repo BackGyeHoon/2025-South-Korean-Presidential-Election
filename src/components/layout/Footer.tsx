@@ -106,6 +106,15 @@ const Footer = () => {
             © 2025 대한민국 대통령 선거 정보 플랫폼. 본 사이트는 교육 및 정보
             제공의 목적으로 제작되었습니다.
           </p>
+          <p className="mt-2">
+            피드백 또는 의견 제안:{" "}
+            <a
+              href="mailto:bk88888@naver.com"
+              className="text-primary hover:underline"
+            >
+              bk88888@naver.com
+            </a>
+          </p>
         </div>
       </div>
     </footer>
