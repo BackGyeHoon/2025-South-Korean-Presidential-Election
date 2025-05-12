@@ -49,15 +49,15 @@ const AnnouncementModal = ({ isOpen, onClose }: AnnouncementModalProps) => {
               위한 중립적인 선거 정보 플랫폼입니다.
             </p>
             <p className="text-gray-700">
-              현재 정식 후보자 등록이 이루어지지 않아{" "}
+              현재 정식 후보자 등록이 진행 중이며{" "}
               <span className="font-semibold">
-                예상 후보들의 공약 정보만 제공
+                등록을 완료한 후보들의 정보만 업데이트
               </span>
               되고 있습니다.
             </p>
             <p className="text-gray-700">
-              정식 후보자 등록이 완료되면 공식 선거 정보와 각 후보자의 공약을
-              상세히 업데이트할 예정입니다.
+              모든 후보자의 등록이 완료되면 전체 후보에 대한 공식 정보와 공약을
+              추가로 업데이트할 예정입니다.
             </p>
           </div>
 

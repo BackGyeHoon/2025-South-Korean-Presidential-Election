@@ -20,14 +20,15 @@ const assetsData: CandidateAsset[] = candidatesData
     // 자산 총액 정보 추출 (없으면 0으로 변환)
     const totalAssets = ensureNumber(candidate.assets?.totalAssets);
 
-    // 주요 자산 정보 가공
-    let mainAssets = candidate.assets?.mainAssets || "";
-    if (!mainAssets && candidate.assets?.housing) {
-      // 주요 자산 정보가 없을 경우, 주택 정보가 있으면 그것을 활용
+    // 주요 자산 정보 가공 - 주택 정보로부터 생성
+    let mainAssets = "";
+    if (candidate.assets?.housing) {
       const housing = candidate.assets.housing;
       mainAssets = housing.location
         ? `${housing.location} ${housing.name || ""} ${housing.type || ""}`
         : "상세 내역 미공개";
+    } else {
+      mainAssets = "자산 정보 미공개";
     }
 
     return {

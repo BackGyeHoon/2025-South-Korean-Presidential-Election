@@ -40,6 +40,14 @@
             "details": "반도체 특별법 신속 제정, 반도체 산업 클러스터 확대, 관련 기업 세제 지원 강화",
             "isComplete": false,
             "announced": "2025년 4월"
+          },
+          {
+            "id": "economy-5",
+            "title": "AI 100조원 투자 및 세계 3대 강국 도약",
+            "description": "AI 세계 3대 강국 진입을 목표로 100조원 민관 공동 투자",
+            "details": "GPU 5만 개 확보, AI 전용 NPU 개발, '모두의 AI' 프로젝트(한국형 챗GPT 전 국민 무료)",
+            "isComplete": false,
+            "announced": "2025년 4월"
           }
         ]
       },
@@ -60,6 +68,14 @@
             "description": "아동수당 지급 대상을 만 12세까지 확대합니다.",
             "details": "현재 7세에서 12세로 확대하여 양육 부담을 덜어줍니다.",
             "isComplete": false
+          },
+          {
+            "id": "welfare-3",
+            "title": "어르신 돌봄 국가책임제 및 주치의제",
+            "description": "어르신 복지 강화를 위해 국가가 돌봄 책임, 의료취약계층 주치의제 도입",
+            "details": "노인 돌봄 서비스 국가 책임제, 의료취약계층 맞춤형 주치의제 도입",
+            "isComplete": false,
+            "announced": "2025년 5월"
           }
         ]
       },
@@ -175,120 +191,6 @@
     }
   },
   {
-    "id": "han-dong-hoon",
-    "name": "한동훈",
-    "party": "국민의힘",
-    "image": "https://search.pstatic.net/common?type=b&size=216&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2FprofileImg%2F38f62ce4-ea5e-43b3-8397-37a5b34b1441.jpg",
-    "color": "#E61E2B",
-    "description": "윤석열 전 대통령의 탄핵 이후 당의 재건을 목표로 출마를 선언했습니다. 중도적 입장을 강조하며, 당내 개혁과 국민 통합을 주요 공약으로 내세우고 있습니다.",
-    "isActive": true,
-    "categories": [
-      {
-        "id": "economy",
-        "title": "경제",
-        "pledges": [
-          {
-            "id": "economy-1",
-            "title": "법인세 인하",
-            "description": "기업 경쟁력 강화를 위한 법인세 인하를 추진합니다.",
-            "details": "최고세율 22%에서 20%로 인하하여 기업 투자 환경을 개선합니다.",
-            "isComplete": false
-          },
-          {
-            "id": "economy-2",
-            "title": "규제 혁신",
-            "description": "불필요한 경제 규제를 완화하여 경제 활성화를 도모합니다.",
-            "details": "규제 샌드박스 확대 및 신산업 분야 규제 개혁 추진",
-            "isComplete": false
-          },
-          {
-            "id": "economy-3",
-            "title": "5대 메가폴리스 조성",
-            "description": "전국에 5개의 서울을 만들겠다는 국토 균형 발전 구상입니다.",
-            "details": "수도권(소프트웨어·자율주행), 충청권(반도체), 대경권(정보통신기술·스마트산업), 호남권(에너지·미래차), 동남권(바이오·해양) 권역별 특화 산업 육성, 권역별 국가전략산업 클러스터 조성으로 일자리 창출",
-            "isComplete": false,
-            "announced": "2025년 4월 22일"
-          }
-        ]
-      },
-      {
-        "id": "welfare",
-        "title": "복지",
-        "pledges": [
-          {
-            "id": "welfare-1",
-            "title": "맞춤형 복지 확대",
-            "description": "획일적 복지가 아닌 개인별 맞춤형 복지 시스템을 구축합니다.",
-            "details": "복지 포인트 제도 도입으로 개인이 필요한 복지 서비스를 선택할 수 있게 합니다.",
-            "isComplete": false
-          }
-        ]
-      },
-      {
-        "id": "education",
-        "title": "교육",
-        "pledges": [
-          {
-            "id": "education-1",
-            "title": "직업교육 강화",
-            "description": "산업 수요에 맞는 직업교육을 강화합니다.",
-            "details": "특성화고 지원 확대 및 산학협력 프로그램 확대",
-            "isComplete": false
-          },
-          {
-            "id": "education-2",
-            "title": "교육 자율성 확대",
-            "description": "학교와 교사의 교육 자율성을 확대합니다.",
-            "details": "교육과정 편성의 자율성 확대 및 교원 평가 제도 개선",
-            "isComplete": false
-          }
-        ]
-      }
-    ],
-    "additional_policies": {
-      "경제": [
-        "국민소득 4만 달러, 중산층 비율 70% 달성 목표",
-        "세금 감면 및 규제 완화를 통한 민간 투자 유도"
-      ],
-      "기술/산업": [
-        "AI 산업에 5년간 150조 원 투자, 생태계 조성 포함 총 200조 원 투자 계획"
-      ]
-    },
-    "details": {
-      "english_name": "Han Dong-hoon",
-      "age": 52,
-      "education": "서울대학교 법학과 졸업",
-      "career": [
-        "서울중앙지검 부장검사",
-        "법무부 장관",
-        "국민의힘 비상대책위원장"
-      ],
-      "achievements": [
-        "대기업 부패 수사 주도",
-        "법무부 디지털 전환 추진",
-        "검찰 개혁 논의 참여"
-      ],
-      "sns": {
-        "facebook": "https://www.facebook.com/dh.han.3",
-        "instagram": "https://www.instagram.com/dhhan.official",
-        "youtube": "https://www.youtube.com/channel/UCris9QMbviXz-Zh__wA4JFA"
-      }
-    },
-    "assets": {
-      "totalAssets": 3960,
-      "housing": {
-        "count": 1,
-        "ownership": "부부 공동명의",
-        "location": "서울 서초구 잠원동",
-        "name": "신반포청구아파트",
-        "type": "아파트",
-        "note": "현재는 서울 서초구 타워팰리스에 전세로 거주 중",
-        "estimatedPrice": 3100
-      },
-      "source": "한국경제, 네이트뉴스"
-    }
-  },
-  {
     "id": "kim-moon-soo",
     "name": "김문수",
     "party": "국민의힘",
@@ -315,6 +217,22 @@
             "details": "서울 1시간대 생활권 구축, 수도권의 GTX 시스템을 부산·울산·경남, 대구·경북, 광주·전남, 대전·세종·충남 등 전국 5대 광역권으로 확대",
             "isComplete": false,
             "announced": "2025년 4월 22일"
+          },
+          {
+            "id": "economy-3",
+            "title": "기업하기 좋은 나라, 일자리 창출",
+            "description": "자본·기술·노동 3대 혁신으로 경제 대전환",
+            "details": "규제 혁파, 첨단산업 육성, 일자리 창출",
+            "isComplete": false,
+            "announced": "2025년 5월"
+          },
+          {
+            "id": "economy-4",
+            "title": "AI·에너지 3대 강국 도약",
+            "description": "AI 및 에너지 분야 세계 3대 강국 도약",
+            "details": "AI 전 주기 투자, 전문인력 20만명 양성, AI 리터러시 확산",
+            "isComplete": false,
+            "announced": "2025년 5월"
           }
         ]
       },
@@ -342,6 +260,14 @@
             "details": "대학가 '반값 월세존' 지정, 1인형 아파트 및 오피스텔 공급 확대, 세대 공존형 아파트 공급",
             "isComplete": false,
             "announced": "2025년 4월 22일"
+          },
+          {
+            "id": "housing-2",
+            "title": "3·3·3 청년주택 공급",
+            "description": "결혼·출산 시 9년간 주거비 지원, 매년 10만호 청년주택 공급",
+            "details": "결혼 3년, 첫째 3년, 둘째 3년 주거비 지원",
+            "isComplete": false,
+            "announced": "2025년 5월"
           }
         ]
       },
@@ -394,197 +320,6 @@
     }
   },
   {
-    "id": "ahn-cheol-soo",
-    "name": "안철수",
-    "party": "국민의힘",
-    "image": "https://search.pstatic.net/common?type=b&size=216&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2FprofileImg%2F89f4aee1-2d0b-41ea-9729-8eadf3053928.jpg",
-    "color": "#E61E2B",
-    "description": "과거 대선에 세 차례 출마한 경험이 있습니다. 이번 선거에서는 인공지능 등 신기술을 통한 경제 혁신을 강조하며 출마를 선언했습니다.",
-    "isActive": false,
-    "categories": [
-      {
-        "id": "economy",
-        "title": "경제",
-        "pledges": [
-          {
-            "id": "economy-1",
-            "title": "AI 혁신 경제",
-            "description": "인공지능 기술을 통한 산업 혁신을 추진합니다.",
-            "details": "AI 인재 10만명 양성, 디지털 전환 지원 확대",
-            "isComplete": false
-          },
-          {
-            "id": "economy-2",
-            "title": "과학기술 중심 미래 비전",
-            "description": "인공지능 분야의 전문성을 기반으로 국가 미래 전략을 수립합니다.",
-            "details": "첨단 과학기술 육성을 통한 국가 경쟁력 강화, AI 분야 집중 투자",
-            "isComplete": false,
-            "announced": "2025년 4월 13일"
-          }
-        ]
-      },
-      {
-        "id": "welfare",
-        "title": "복지",
-        "pledges": [
-          {
-            "id": "welfare-1",
-            "title": "디지털 헬스케어 확대",
-            "description": "첨단 의료기술을 활용한 건강관리 시스템을 구축합니다.",
-            "details": "원격진료 확대, 개인맞춤형 건강관리 서비스 도입",
-            "isComplete": false
-          }
-        ]
-      },
-      {
-        "id": "education",
-        "title": "교육",
-        "pledges": [
-          {
-            "id": "education-1",
-            "title": "미래인재 양성",
-            "description": "코딩 교육 의무화 등 디지털 역량 강화 교육을 확대합니다.",
-            "details": "초중고 코딩 교육 확대, 디지털 문해력 교육 강화",
-            "isComplete": false
-          }
-        ]
-      }
-    ],
-    "additional_policies": {
-      "기술/산업": ["AI, 반도체, 바이오 등 5대 초격차 산업 육성"],
-      "정치개혁": ["'87년 체제' 극복을 위한 개헌 추진"],
-      "사회복지": ["출산·육아지원금 1천만 원 지급"]
-    },
-    "details": {
-      "english_name": "Ahn Cheol-soo",
-      "age": 63,
-      "education": "서울대학교 의과대학 졸업, 펜실베이니아대학교 MBA",
-      "career": ["안랩 창업자", "국회의원", "대통령직 인수위원장"],
-      "achievements": [
-        "IT 보안 산업 발전",
-        "정치 개혁 운동 주도",
-        "과학기술 정책 강화"
-      ],
-      "sns": {
-        "facebook": "https://www.facebook.com/ahncs111",
-        "instagram": "https://www.instagram.com/ahncheolsoo",
-        "twitter": "https://x.com/cheolsoo0919",
-        "youtube": "https://www.youtube.com/channel/UCTPfDsz2XqmLzYud-fc6xBw"
-      }
-    },
-    "assets": {
-      "totalAssets": 136800,
-      "housing": {
-        "count": 0,
-        "ownership": "없음",
-        "location": "없음",
-        "name": "없음",
-        "type": "무주택",
-        "note": "과거 서울 노원구 상계동 수락산 늘푸른아파트에 전세로 거주했으나, 해당 아파트를 처분하여 현재는 무주택 상태"
-      },
-      "mainAssets": "안랩 주식 186만 주(약 1,231억 원), 예금 약 34억 원, 채권 약 29억 원 등",
-      "source": "헤럴드 비즈니스, 아주경제"
-    }
-  },
-  {
-    "id": "hong-joon-pyo",
-    "name": "홍준표",
-    "party": "국민의힘",
-    "image": "https://search.pstatic.net/common?type=b&size=216&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2Fportrait%2F202110%2F20211002100802747.jpg",
-    "color": "#E61E2B",
-    "description": "전 대구시장으로, 국민의힘 경선에 참여하기 위해 출마를 선언했습니다. 보수 진영의 전통적인 가치를 강조하며, 강한 리더십을 내세우고 있습니다.",
-    "isActive": false,
-    "categories": [
-      {
-        "id": "economy",
-        "title": "경제",
-        "pledges": [
-          {
-            "id": "economy-1",
-            "title": "중소기업 육성",
-            "description": "중소기업 지원을 통한 균형 경제 발전을 추진합니다.",
-            "details": "중소기업 세제 혜택 확대, 대기업과의 상생협력 강화",
-            "isComplete": false
-          }
-        ]
-      },
-      {
-        "id": "defense",
-        "title": "국방/안보",
-        "pledges": [
-          {
-            "id": "defense-1",
-            "title": "국가안보 강화",
-            "description": "국방력 강화를 통한 국가 안보를 확보합니다.",
-            "details": "국방비 증액, 첨단 무기 체계 도입",
-            "isComplete": false
-          }
-        ]
-      },
-      {
-        "id": "education",
-        "title": "교육",
-        "pledges": [
-          {
-            "id": "education-1",
-            "title": "교육 경쟁력 강화",
-            "description": "학생들의 경쟁력 강화를 위한 교육 개혁을 추진합니다.",
-            "details": "영재교육 확대, 기초학력 보장 강화",
-            "isComplete": false
-          }
-        ]
-      },
-      {
-        "id": "social",
-        "title": "사회",
-        "pledges": [
-          {
-            "id": "social-1",
-            "title": "사회·교육·문화 분야 개혁",
-            "description": "사회 체제 개편을 위한 강력한 개혁 정책을 추진합니다.",
-            "details": "사형제 부활, 청와대 복원, 제7공화국 개헌 추진",
-            "isComplete": false,
-            "announced": "2025년 4월 18일"
-          }
-        ]
-      }
-    ],
-    "additional_policies": {
-      "정치개혁": [
-        "헌법재판소 폐지 및 선거관리위원회 개편 등 정치 분야 대개혁 추진"
-      ],
-      "국방/안보": ["모병제 확대 및 군 가산점 제도 도입"]
-    },
-    "details": {
-      "english_name": "Hong Joon-pyo",
-      "age": 71,
-      "education": "고려대학교 법학과 졸업",
-      "career": ["국회의원 (5선)", "자유한국당 대표", "대구광역시장"],
-      "achievements": [
-        "검찰 개혁 추진",
-        "지역 균형 발전 정책 시행",
-        "보수 통합 노력"
-      ],
-      "sns": {
-        "facebook": "https://www.facebook.com/joonpyohong21",
-        "instagram": "https://www.instagram.com/1hongjp",
-        "youtube": "https://www.youtube.com/channel/UCfmicRK2-WdZMVQDrfcitLA"
-      }
-    },
-    "assets": {
-      "totalAssets": 4260,
-      "housing": {
-        "count": 1,
-        "ownership": "부부 공동명의",
-        "location": "서울 송파구 잠실동",
-        "name": "아시아선수촌아파트",
-        "type": "아파트",
-        "estimatedPrice": 2700
-      },
-      "source": "Skyedaily, 아주경제"
-    }
-  },
-  {
     "id": "lee-jun-seok",
     "name": "이준석",
     "party": "개혁신당",
@@ -602,6 +337,14 @@
             "description": "청년 창업과 혁신 기업 육성을 통한 경제 활력을 도모합니다.",
             "details": "창업 펀드 확대, 규제 샌드박스 강화, 실패 용인 문화 조성",
             "isComplete": false
+          },
+          {
+            "id": "economy-2",
+            "title": "부산·영남권 첨단산업 및 금융 허브화",
+            "description": "가덕 신공항 완전 건설, 부산 금융기관 세제 혜택, 데이터 센터 특구 설치",
+            "details": "활주로 2본 신공항, 금융기관 세제 지원, 데이터센터 규제 완화",
+            "isComplete": false,
+            "announced": "2025년 5월"
           }
         ]
       },
@@ -705,115 +448,217 @@
     }
   },
   {
-    "id": "kim-jae-yeon",
-    "name": "김재연",
-    "party": "진보당",
-    "image": "https://i.namu.wiki/i/o1JNiqvy-pU2FzDgWjpwbDHNnv6KUGQiCjkVvrggqPN-2E5ztAEin_e7FaEmIrBvV85QqykxKYZIuvmsVnM6YNXLjUk7iLW0LOhUippJosRZ50YlMqGU-JGB_qKu3nnJeSx0i_f94fkNwb442YEdcQ.webp",
-    "color": "#D6001C",
-    "description": "진보당 상임대표로서, 사회적 약자와 청년층을 대변하며 성평등과 기후위기 대응, 내란세력 청산 등을 주요 의제로 내세우고 있습니다.",
+    "id": "kwon-young-guk",
+    "name": "권영국",
+    "party": "민주노동당",
+    "image": "https://i.namu.wiki/i/k1c4pe8vbLafRlUTTBVho6M7sEWBW_sKHzqk3qMLcQa1dC2SOUhL_kYxKcgkmrB_VEwrLEpY_QF2q6XZuH5DrprcKfhQklB1zsmX7eI_9WwXENhxNNzloTkImiYUWNEq_2HTBxL9kyyU-K2IppuFVA.webp",
+    "color": "#FFCD1E",
+    "description": "민주노동당 대표. 노동·사회적 약자 권익, 기후위기 대응, 평등사회 실현을 내세움.",
     "isActive": true,
     "categories": [
       {
-        "id": "gender-equality",
-        "title": "성평등",
-        "pledges": [
-          {
-            "id": "gender-equality-1",
-            "title": "차별금지법 제정",
-            "description": "모든 형태의 차별을 금지하는 법률 제정을 추진합니다.",
-            "details": "성별, 장애, 나이, 인종, 성적 지향 등 다양한 차별을 금지하는 포괄적 차별금지법 제정",
-            "isComplete": false
-          },
-          {
-            "id": "gender-equality-2",
-            "title": "성평등 부총리 신설",
-            "description": "성평등 정책을 총괄하는 부총리직을 신설합니다.",
-            "details": "여성가족부를 성평등부로 전환하고, 부총리급으로 격상하여 성평등 정책을 강화",
-            "isComplete": false
-          }
-        ]
-      },
-      {
-        "id": "climate",
-        "title": "기후위기 대응",
-        "pledges": [
-          {
-            "id": "climate-1",
-            "title": "기후위기 대응 국가시범특구 지정",
-            "description": "기후위기 대응을 위한 국가시범특구를 지정합니다.",
-            "details": "지방정부와 협력하여 기후위기 대응 모델을 개발하고 확산",
-            "isComplete": false
-          },
-          {
-            "id": "climate-2",
-            "title": "기후위기 농업인 피해 지원기금 조성",
-            "description": "기후위기로 인한 농업인 피해를 지원하는 기금을 조성합니다.",
-            "details": "기후변화로 인한 농업 피해를 보상하고 지속가능한 농업을 지원",
-            "isComplete": false
-          }
-        ]
-      },
-      {
         "id": "politics",
-        "title": "정치개혁",
+        "title": "정치",
         "pledges": [
           {
             "id": "politics-1",
-            "title": "5대 평화공약 발표",
-            "description": "한반도 평화와 자주를 위한 5대 평화·외교 공약을 발표했습니다.",
-            "details": "판문점 선언 7주년을 맞아 한반도 평화체제 구축을 위한 구체적인 방안을 제시했습니다.",
-            "isComplete": false,
-            "announced": "2025년 4월 27일"
+            "title": "반란세력 청산",
+            "description": "계엄령 사태 및 탄핵 이후 반란세력 완전 청산",
+            "details": "민주주의 회복, 적폐 청산",
+            "isComplete": false
           },
           {
             "id": "politics-2",
-            "title": "내란세력 청산",
-            "description": "내란에 가담한 세력에 대한 청산을 추진합니다.",
-            "details": "내란 가담자 처벌, 권력기관 개혁, 관련 정치세력 해체 등을 포함한 '내란종식 로드맵' 제시",
+            "title": "차별금지법 제정",
+            "description": "포괄적 차별금지법 제정",
+            "details": "성별, 장애, 이주, 성소수자 등 모든 차별 금지",
+            "isComplete": false
+          }
+        ]
+      },
+      {
+        "id": "welfare",
+        "title": "복지",
+        "pledges": [
+          {
+            "id": "welfare-1",
+            "title": "이주노동자 권리 강화",
+            "description": "이주노동자 권리 신장 및 이민제도 개혁",
+            "details": "이주노동자 노조 합법화, 이민법 전면 개정",
             "isComplete": false
           }
         ]
       }
     ],
     "additional_policies": {
-      "지역": [
-        "제주 제2공항 백지화 추진",
-        "제주 4·3사건 왜곡 행위 처벌 및 진상조사 강화"
-      ],
-      "교육": ["무상교육 확대 및 교육 불평등 해소"]
+      "사회개혁": ["진보정치 독자노선 고수", "평등사회 실현"]
     },
     "details": {
-      "english_name": "Kim Jae-yeon",
-      "age": 44,
-      "education": "한국외국어대학교 노어과 졸업",
-      "career": [
-        "제19대 국회의원 (비례대표)",
-        "진보당 상임대표",
-        "전 통합진보당 대변인"
-      ],
+      "english_name": "Kwon Young-guk",
+      "age": 59,
+      "education": "서울대학교 법학과 졸업",
+      "career": ["민주노동당 대표", "노동·인권 변호사"],
       "achievements": [
-        "차별금지법 발의",
-        "성평등 정책 강화",
-        "기후위기 대응 정책 추진"
+        "이주노동자노조 합법화 판결 주도",
+        "노동·인권 분야 공로"
       ],
       "sns": {
-        "facebook": "https://www.facebook.com/ktoi80",
-        "instagram": "https://www.instagram.com/jaeyeon_wind",
-        "youtube": "https://www.youtube.com/channel/UCjBiKxesJK5fko0w0UEkr8Q",
-        "x": "https://x.com/jaeyeon80"
+        "facebook": "https://www.facebook.com/kygook09/",
+        "instagram": "https://www.instagram.com/kygook_",
+        "youtube": "https://www.youtube.com/@-tv9583",
+        "x": "https://x.com/nasaram2017"
       }
     },
     "assets": {
-      "totalAssets": null,
+      "totalAssets": 450,
       "housing": {
-        "count": null,
-        "ownership": null,
-        "location": null,
-        "name": null,
-        "type": null,
-        "estimatedPrice": null
+        "count": 1,
+        "ownership": "본인 명의",
+        "location": "서울 관악구",
+        "name": "미공개",
+        "type": "아파트",
+        "estimatedPrice": 350
       },
-      "source": null
+      "source": "공직자 재산공개"
+    }
+  },
+  {
+    "id": "gu-joo-wa",
+    "name": "구주와",
+    "party": "자유통일당",
+    "image": "https://i.namu.wiki/i/qNmMt5YtVsh2F6xKLccqs9b0sMfxIrcvkel0CXgVh6uxbLcpKNZS8NNsVzIw6EDPgfjhloc688oz-pR8n04wA_U0Khg24rIc7qweiv_CpHy_wBJl1DVbAUWXlzDP675RNRHJRWZeHXJ1B82vYs2-eQ.webp",
+    "color": "#1C3D7A",
+    "description": "자유통일당 후보. 강경 보수, 안보, 자유시장경제 강조.",
+    "isActive": true,
+    "categories": [
+      {
+        "id": "security",
+        "title": "안보",
+        "pledges": [
+          {
+            "id": "security-1",
+            "title": "강경 대북정책",
+            "description": "대북 강경 정책 및 한미동맹 강화",
+            "details": "북핵 억제력 강화, 주한미군 협력 확대",
+            "isComplete": false
+          }
+        ]
+      }
+    ],
+    "details": {
+      "english_name": "Koo Joo-wa",
+      "age": 53,
+      "education": "서울대학교 법학과 졸업",
+      "career": ["변호사", "자유통일당 대표"],
+      "achievements": [],
+      "sns": {
+        "youtube": "https://www.youtube.com/@%EA%B5%AC%EC%A3%BC%EC%99%80TV"
+      }
+    },
+    "assets": {
+      "totalAssets": 800,
+      "housing": {
+        "count": 1,
+        "ownership": "본인 명의",
+        "location": "서울 송파구",
+        "name": "미공개",
+        "type": "아파트",
+        "estimatedPrice": 700
+      },
+      "source": "공직자 재산공개"
+    }
+  },
+  {
+    "id": "hwang-kyo-ahn",
+    "name": "황교안",
+    "party": "무소속",
+    "image": "https://i.namu.wiki/i/th6T5-7IgiCDDrjhB8Nyuzi0plOhHYnhhvSJRMVxzTdJp7h9ytQgjDpCQ242YRLnIYiRxDEAlNw5Lv_JjCSDpPqIHI9rjyVm1CbW4xH1gOwhNtRYRe9HSQlVhHGYaMVOyt9OvDE0bbzOtTlnKYxdFQ.webp",
+    "color": "#808080",
+    "description": "전 국무총리, 전 대통령 권한대행. 법치주의와 보수 가치 강조.",
+    "isActive": true,
+    "categories": [
+      {
+        "id": "politics",
+        "title": "정치",
+        "pledges": [
+          {
+            "id": "politics-1",
+            "title": "법치주의 강화",
+            "description": "법치주의 회복과 국가안보 강화",
+            "details": "검찰 독립성 보장, 안보 정책 강화",
+            "isComplete": false
+          }
+        ]
+      }
+    ],
+    "details": {
+      "english_name": "Hwang Kyo-ahn",
+      "age": 68,
+      "education": "성균관대학교 법학과 졸업",
+      "career": ["국무총리", "대통령 권한대행", "법무부 장관"],
+      "achievements": [],
+      "sns": {
+        "facebook": "https://www.facebook.com/promisehwang/",
+        "instagram": "https://www.instagram.com/hkyoahn._official?igsh=b3JkbmN0MnhhYnhx%3D",
+        "youtube": "https://www.youtube.com/channel/UCnacnZiUscX6jrVKu78Notg",
+        "x": "https://x.com/HwangKyoAhn"
+      }
+    },
+    "assets": {
+      "totalAssets": 2300,
+      "housing": {
+        "count": 1,
+        "ownership": "본인 명의",
+        "location": "서울 강남구",
+        "name": "미공개",
+        "type": "아파트",
+        "estimatedPrice": 2000
+      },
+      "source": "공직자 재산공개"
+    }
+  },
+  {
+    "id": "song-jin-ho",
+    "name": "송진호",
+    "party": "무소속",
+    "image": "https://i.namu.wiki/i/sl59AQwhlXCJl0EtLKxIZ6wl4PlVpFlQi4x9WBR6UrvMGhkElBZJiSU6rd_JnbxMnm_xjk0bP3L8bICNMEkwPlNmHH3EcyKyzRPoudlXEAQMb9apfSaDKUo9f4tXcAAA0MqwLMOkQxAEEPml-Z8R2w.webp",
+    "color": "#808080",
+    "description": "무소속 후보. 사회적 약자와 서민 정책에 집중.",
+    "isActive": true,
+    "categories": [
+      {
+        "id": "welfare",
+        "title": "복지",
+        "pledges": [
+          {
+            "id": "welfare-1",
+            "title": "사회적 약자 지원",
+            "description": "사회적 약자와 서민을 위한 복지 정책 강화",
+            "details": "기초생활보장 확대, 주거 지원 강화",
+            "isComplete": false
+          }
+        ]
+      }
+    ],
+    "details": {
+      "english_name": "Song Jin-ho",
+      "age": 54,
+      "education": "미공개",
+      "career": ["사회운동가"],
+      "achievements": [],
+      "sns": {}
+    },
+    "assets": {
+      "totalAssets": 100,
+      "housing": {
+        "count": 0,
+        "ownership": "없음",
+        "location": "",
+        "name": "",
+        "type": "",
+        "estimatedPrice": 0
+      },
+      "source": "공직자 재산공개"
     }
   }
 ]

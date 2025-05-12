@@ -161,7 +161,6 @@ const CandidateAssetsPage: React.FC = () => {
           <p className="text-center text-sm text-gray-500">
             이 데이터는 공개된 자료를 기반으로 작성되었으며, 실제 재산과 차이가
             있을 수 있습니다.
-            <br />© 2023-2025 대선 후보자 자산 정보. All rights reserved.
           </p>
         </div>
       </footer>
