@@ -13,6 +13,7 @@ import CandidateAssetsPage from "./pages/CandidateAssetsPage";
 import ScrollToTop from "./components/utils/ScrollToTop";
 import { Analytics } from "@vercel/analytics/react";
 import AnnouncementModal from "./components/ui/AnnouncementModal";
+import PolicyReceptionPage from "./pages/PolicyReceptionPage";
 
 // QueryClient 설정
 const queryClient = new QueryClient({
@@ -73,6 +74,10 @@ function App() {
               <Route
                 path="/candidate-assets"
                 element={<CandidateAssetsPage />}
+              />
+              <Route
+                path="/policy-reception"
+                element={<PolicyReceptionPage />}
               />
             </Routes>
           </main>

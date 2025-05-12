@@ -39,6 +39,22 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/candidate-assets"
+                  className="text-text-light hover:text-primary"
+                >
+                  재산 내역
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/policy-reception"
+                  className="text-text-light hover:text-primary"
+                >
+                  공약 여론
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/voting-info"
                   className="text-text-light hover:text-primary"
                 >
