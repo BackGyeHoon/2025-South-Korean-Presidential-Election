@@ -105,19 +105,17 @@
           },
           {
             "id": "economy-4",
-            "title": "1등 반도체 국가 건설",
-            "description": "반도체 산업 육성을 위한 특별법 제정을 추진합니다.",
-            "details": "반도체 특별법 신속 제정, 반도체 산업 클러스터 확대, 관련 기업 세제 지원 강화",
-            "isComplete": false,
-            "announced": "2025년 4월"
+            "title": "전략산업 국가 주도 및 반도체 특별법",
+            "description": "반도체, 방산, K-콘텐츠 등 미래 먹거리 산업 국가 주도 육성",
+            "details": "반도체 특별법 신속 제정, 관련 산업 클러스터 확대",
+            "isComplete": false
           },
           {
             "id": "economy-5",
             "title": "AI 100조원 투자 및 세계 3대 강국 도약",
             "description": "AI 세계 3대 강국 진입을 목표로 100조원 민관 공동 투자",
             "details": "GPU 5만 개 확보, AI 전용 NPU 개발, '모두의 AI' 프로젝트(한국형 챗GPT 전 국민 무료)",
-            "isComplete": false,
-            "announced": "2025년 4월"
+            "isComplete": false
           }
         ]
       },
@@ -135,8 +133,8 @@
           {
             "id": "welfare-2",
             "title": "아동수당 확대",
-            "description": "아동수당 지급 대상을 만 12세까지 확대합니다.",
-            "details": "현재 7세에서 12세로 확대하여 양육 부담을 덜어줍니다.",
+            "description": "아동수당 지급 대상을 만 18세까지 확대합니다.",
+            "details": "아동수당 지급 대상을 만 18세까지 확대",
             "isComplete": false
           },
           {
@@ -144,8 +142,21 @@
             "title": "어르신 돌봄 국가책임제 및 주치의제",
             "description": "어르신 복지 강화를 위해 국가가 돌봄 책임, 의료취약계층 주치의제 도입",
             "details": "노인 돌봄 서비스 국가 책임제, 의료취약계층 맞춤형 주치의제 도입",
-            "isComplete": false,
-            "announced": "2025년 5월"
+            "isComplete": false
+          },
+          {
+            "id": "welfare-4",
+            "title": "청년 월 10만원 지급",
+            "description": "청년에게 월 10만원 지급",
+            "details": "청년 미래적금, 주거·일자리 지원 확대",
+            "isComplete": false
+          },
+          {
+            "id": "welfare-5",
+            "title": "주 4.5일제 도입",
+            "description": "노동시간 단축, 일과 삶의 균형",
+            "details": "주 4.5일제 시범 도입 및 단계적 확대",
+            "isComplete": false
           }
         ]
       },
@@ -185,6 +196,37 @@
             "description": "세종시에 대통령 집무실을 설치하여 행정수도를 완성합니다.",
             "details": "세종시 대통령 집무실 설치, 제2차 공공기관 이전 추진",
             "isComplete": false
+          },
+          {
+            "id": "politics-2",
+            "title": "검찰 수사·기소 분리 등 사법개혁",
+            "description": "검찰개혁 완성, 국민소환제 도입",
+            "details": "수사·기소 분리, 감사원 독립성 강화, 대법관 정원 확대",
+            "isComplete": false
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "title": "지역/행정",
+        "pledges": [
+          {
+            "id": "region-1",
+            "title": "세종의사당 및 대통령 세종집무실 건립",
+            "description": "행정수도 완성",
+            "details": "국회 세종의사당, 대통령 세종집무실 설치"
+          }
+        ]
+      },
+      {
+        "id": "climate",
+        "title": "기후·저출생",
+        "pledges": [
+          {
+            "id": "climate-1",
+            "title": "저출생·고령화 대응 및 탄소중립",
+            "description": "아동수당 확대, 정년 연장, 탄소중립 정책",
+            "details": "아동수당 18세, 정년 65세, 2050 탄소중립"
           }
         ]
       },
@@ -343,14 +385,6 @@
           },
           {
             "id": "economy-2",
-            "title": "전국 5대 광역권 GTX 구축",
-            "description": "전국 5대 광역권에 광역급행철도(GTX)를 구축합니다.",
-            "details": "서울 1시간대 생활권 구축, 수도권의 GTX 시스템을 부산·울산·경남, 대구·경북, 광주·전남, 대전·세종·충남 등 전국 5대 광역권으로 확대",
-            "isComplete": false,
-            "announced": "2025년 4월 22일"
-          },
-          {
-            "id": "economy-3",
             "title": "기업하기 좋은 나라, 일자리 창출",
             "description": "자본·기술·노동 3대 혁신으로 경제 대전환",
             "details": "규제 혁파, 첨단산업 육성, 일자리 창출",
@@ -358,12 +392,11 @@
             "announced": "2025년 5월"
           },
           {
-            "id": "economy-4",
+            "id": "economy-3",
             "title": "AI·에너지 3대 강국 도약",
             "description": "AI 및 에너지 분야 세계 3대 강국 도약",
             "details": "AI 전 주기 투자, 전문인력 20만명 양성, AI 리터러시 확산",
-            "isComplete": false,
-            "announced": "2025년 5월"
+            "isComplete": false
           }
         ]
       },
@@ -376,6 +409,20 @@
             "title": "저출산 대책 강화",
             "description": "출산 장려 정책을 강화하여 인구 감소 문제에 대응합니다.",
             "details": "출산 지원금 확대, 육아 휴직 제도 개선",
+            "isComplete": false
+          },
+          {
+            "id": "welfare-2",
+            "title": "3·3·3 청년주택 공급",
+            "description": "결혼·출산 시 9년간 주거비 지원, 매년 10만호 청년주택 공급",
+            "details": "결혼 3년, 첫째 3년, 둘째 3년 주거비 지원",
+            "isComplete": false
+          },
+          {
+            "id": "welfare-3",
+            "title": "평생복지 실현",
+            "description": "아이 낳고 기르기 좋은 나라",
+            "details": "임산부 검진·분만비 지원 확대, 차상위 계층 소득보장",
             "isComplete": false
           }
         ]
@@ -397,8 +444,14 @@
             "title": "3·3·3 청년주택 공급",
             "description": "결혼·출산 시 9년간 주거비 지원, 매년 10만호 청년주택 공급",
             "details": "결혼 3년, 첫째 3년, 둘째 3년 주거비 지원",
-            "isComplete": false,
-            "announced": "2025년 5월"
+            "isComplete": false
+          },
+          {
+            "id": "housing-3",
+            "title": "GTX 전국 확대",
+            "description": "수도권·충청 등 전국 주요 도시 연결 교통망 구축",
+            "details": "GTX 전국 5대 광역권 확대",
+            "isComplete": false
           }
         ]
       },
@@ -412,6 +465,30 @@
             "description": "실무 중심 교육을 강화해 취업 경쟁력을 높입니다.",
             "details": "산학협력 강화, 현장 실습 확대",
             "isComplete": false
+          }
+        ]
+      },
+      {
+        "id": "politics",
+        "title": "정치",
+        "pledges": [
+          {
+            "id": "politics-1",
+            "title": "공수처 폐지 및 특권 없는 정부",
+            "description": "공수처 폐지, 국회의원 불체포특권 폐지",
+            "details": "공수처 폐지, 감사관 파견·임명"
+          }
+        ]
+      },
+      {
+        "id": "security",
+        "title": "안보/재난",
+        "pledges": [
+          {
+            "id": "security-1",
+            "title": "북핵 대응 및 국민 안전 강화",
+            "description": "북핵 대응 등 튼튼한 국가안보, 재난에 강한 나라",
+            "details": "핵무기 설계 기술 축적, 국민 안전 정책"
           }
         ]
       }
@@ -526,18 +603,24 @@
         "pledges": [
           {
             "id": "economy-1",
-            "title": "스타트업 지원 강화",
-            "description": "청년 창업과 혁신 기업 육성을 통한 경제 활력을 도모합니다.",
-            "details": "창업 펀드 확대, 규제 샌드박스 강화, 실패 용인 문화 조성",
+            "title": "리쇼어링 및 지방 경쟁력 강화",
+            "description": "해외 진출 기업 국내 복귀, 법인세 자치권 부여",
+            "details": "지자체별 법인세 경쟁, 최저임금 결정권 지자체 위임",
             "isComplete": false
           },
           {
             "id": "economy-2",
+            "title": "규제 혁파 및 스타트업 지원",
+            "description": "규제기준국가제 도입, 창업 펀드 확대",
+            "details": "규제 대폭 정비, 청년 창업 지원",
+            "isComplete": false
+          },
+          {
+            "id": "economy-3",
             "title": "부산·영남권 첨단산업 및 금융 허브화",
             "description": "가덕 신공항 완전 건설, 부산 금융기관 세제 혜택, 데이터 센터 특구 설치",
             "details": "활주로 2본 신공항, 금융기관 세제 지원, 데이터센터 규제 완화",
-            "isComplete": false,
-            "announced": "2025년 5월"
+            "isComplete": false
           }
         ]
       },
@@ -561,6 +644,20 @@
           },
           {
             "id": "welfare-3",
+            "title": "청년 든든출발자금",
+            "description": "청년에게 최대 5천만원 한도, 연 1%대 고정금리 대출 지원",
+            "details": "자산 형성 및 사회진출 초기자금",
+            "isComplete": false
+          },
+          {
+            "id": "welfare-4",
+            "title": "신·구 연금 분리, 확정기여형 신연금 도입",
+            "description": "낸 만큼 받는 연금제도 확립",
+            "details": "신·구 연금 분리, 확정기여형 신연금",
+            "isComplete": false
+          },
+          {
+            "id": "welfare-5",
             "title": "현금성 복지 축소 및 세대 공정성 강화",
             "description": "미래 세대의 부담을 줄이기 위한 복지 정책 개편을 추진합니다.",
             "details": "과도한 현금성 복지 축소, 정년 연장 시 국민연금 수급 연령 상향 등 사회적 타협 추진",
@@ -578,6 +675,13 @@
             "description": "미래 인재 양성을 위한 교육 시스템 개혁을 추진합니다.",
             "details": "입시 중심 교육 탈피, 창의성 교육 확대, 평생학습 체계 구축",
             "isComplete": false
+          },
+          {
+            "id": "education-2",
+            "title": "교권 보호 및 교육 혁신",
+            "description": "교사소송 국가책임제, 학습지도실 제도 도입",
+            "details": "교권 강화, 입시 중심 교육 탈피, 창의성 교육 확대",
+            "isComplete": false
           }
         ]
       },
@@ -591,6 +695,13 @@
             "description": "AI, 바이오 등 첨단 산업 분야의 경쟁력 강화를 추진합니다.",
             "details": "민간 및 공공 부문의 인재 영입, AI・바이오・국방 분야 공약 업그레이드, 실질적 정책 실행력 강화",
             "isComplete": false
+          },
+          {
+            "id": "tech-2",
+            "title": "과학기술 성과연금 및 인재 우대",
+            "description": "과학기술 성과연금, 과학자 패스트트랙 등 인재 우대",
+            "details": "국가과학영웅 예우제도 신설",
+            "isComplete": false
           }
         ]
       },
@@ -603,6 +714,26 @@
             "title": "행정수도 세종 완성",
             "description": "세종시를 명실상부한 행정수도로 완성하겠다는 공약입니다.",
             "details": "노무현 전 대통령의 꿈과 박근혜 전 대통령의 소신을 계승, 국가 균형 발전 도모",
+            "isComplete": false
+          },
+          {
+            "id": "politics-2",
+            "title": "작은 정부, 3부총리제 도입",
+            "description": "19개 부처를 13개로 축소, 3부총리제(안보·전략·사회) 도입",
+            "details": "통일부·여가부·공수처 폐지, 부처 통폐합",
+            "isComplete": false
+          }
+        ]
+      },
+      {
+        "id": "security",
+        "title": "안보/재난",
+        "pledges": [
+          {
+            "id": "security-1",
+            "title": "병역제도 개혁",
+            "description": "현역대상자 중 장교·부사관 선발, 기초군사훈련 평가제 도입",
+            "details": "병역제도 혁신",
             "isComplete": false
           }
         ]

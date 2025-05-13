@@ -34,13 +34,33 @@ const PledgesPage = () => {
       });
     });
 
-    // '모든 공약 보기' 카테고리를 맨 앞에 추가
+    // 중요 카테고리 순서 정의 (앞에 위치할 카테고리 ID 순서대로)
+    const priorityOrder = [
+      "economy", // 경제
+      "welfare", // 복지
+      "housing", // 주택
+      "education", // 교육
+      "tech", // 과학기술
+      "healthcare", // 의료
+      "politics", // 정치
+      "security", // 안보/재난
+      "climate", // 기후/저출생
+      "culture", // 문화
+      "region", // 지역/행정
+    ];
+
+    // '모든 공약 보기' 카테고리를 맨 앞에 추가하고 나머지는 우선순위 순으로 정렬
     const categoriesArray = [
       { id: "all", title: "모든 공약" },
-      ...Array.from(allCategories).map(([id, title]) => ({
-        id,
-        title,
-      })),
+      ...Array.from(allCategories)
+        .map(([id, title]) => ({
+          id,
+          title,
+          priority:
+            priorityOrder.indexOf(id) !== -1 ? priorityOrder.indexOf(id) : 999,
+        }))
+        .sort((a, b) => a.priority - b.priority)
+        .map(({ id, title }) => ({ id, title })),
     ];
 
     return categoriesArray;
