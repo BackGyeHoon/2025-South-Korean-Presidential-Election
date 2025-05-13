@@ -47,6 +47,14 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/criminal-records"
+                  className="text-text-light hover:text-primary"
+                >
+                  전과 기록
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/policy-reception"
                   className="text-text-light hover:text-primary"
                 >

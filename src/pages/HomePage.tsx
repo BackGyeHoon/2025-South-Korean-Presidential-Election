@@ -156,6 +156,36 @@ const HomePage: React.FC = () => {
                         <p className="text-xs sm:text-sm text-gray-500 mb-2 sm:mb-3">
                           {candidate.party}
                         </p>
+
+                        {/* 단일화 정보 */}
+                        {candidate.unification &&
+                          candidate.unification.isUnifiedCandidate && (
+                            <div className="mb-2 px-2 py-1 bg-gray-50 rounded-md border border-gray-200 flex items-center justify-center">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="12"
+                                height="12"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="text-primary mr-1"
+                              >
+                                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                                <path d="M2 17l10 5 10-5" />
+                                <path d="M2 12l10 5 10-5" />
+                              </svg>
+                              <span className="text-xs text-primary font-medium">
+                                {candidate.unification.unifiedWith
+                                  .map((u) => u.name)
+                                  .join(", ")}{" "}
+                                단일화
+                              </span>
+                            </div>
+                          )}
+
                         <span
                           className="px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs"
                           style={{

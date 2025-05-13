@@ -214,6 +214,47 @@ const CandidateComparePage = () => {
             <div>
               <h3 className="text-lg font-bold">{candidate.name}</h3>
               <p className="text-sm text-gray-600">{candidate.party}</p>
+
+              {/* 단일화 정보 표시 */}
+              {candidate.unification &&
+                candidate.unification.isUnifiedCandidate &&
+                candidate.unification.unifiedWith &&
+                candidate.unification.unifiedWith.length > 0 && (
+                  <div className="flex items-center mt-1 mb-1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="text-primary mr-1"
+                    >
+                      <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                      <path d="M2 17l10 5 10-5" />
+                      <path d="M2 12l10 5 10-5" />
+                    </svg>
+                    <div className="text-xs text-primary font-medium flex flex-wrap gap-1">
+                      {candidate.unification.unifiedWith.map(
+                        (unified: any, index: number) => (
+                          <span key={index}>
+                            {unified.name}({unified.party})
+                            {index <
+                            (candidate.unification?.unifiedWith?.length || 1) -
+                              1
+                              ? ", "
+                              : ""}
+                          </span>
+                        )
+                      )}
+                      <span>단일화</span>
+                    </div>
+                  </div>
+                )}
+
               <Link
                 to={`/candidates/${candidate.id}`}
                 className="mt-2 inline-block px-3 py-1 text-blue-600 text-sm hover:text-blue-800"

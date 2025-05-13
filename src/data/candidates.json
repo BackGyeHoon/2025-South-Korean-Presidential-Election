@@ -7,6 +7,26 @@
     "color": "#0050C9",
     "description": "2022년 대선에서 근소한 차이로 패배한 후, 경제 성장과 기술 투자, 사회 통합을 강조하며 출마를 선언했습니다. 현재 여론조사에서 선두를 달리고 있으나, 여러 건의 법적 문제에 직면해 있습니다.",
     "isActive": true,
+    "criminal_records": [
+      {
+        "date": "2003-07",
+        "charge": "무고 및 공무원자격사칭",
+        "reason": "분당 파크뷰 특혜분양 사건 고발 과정에서 담당 검사 이름과 사건 중요사항을 방송 PD에게 알려주며 검사 사칭을 도운 것으로 판결됨(시민운동가 활동 중 발생)",
+        "sentence": "벌금 150만원"
+      },
+      {
+        "date": "2004-07",
+        "charge": "도로교통법 위반(음주운전)",
+        "reason": "음주 상태로 차량 운전",
+        "sentence": "벌금 150만원"
+      },
+      {
+        "date": "2004-08",
+        "charge": "공용물건손상 및 특수공무집행방해",
+        "reason": "성남시립병원 설립 조례 폐기에 항의하는 집회에서 시민들과 함께 시의회 진입 시 발생(공익 집회 과정에서 발생)",
+        "sentence": "벌금 500만원"
+      }
+    ],
     "unification": {
       "isUnifiedCandidate": true,
       "unifiedWith": [
@@ -248,6 +268,26 @@
     "color": "#E61E2B",
     "description": "전 경기도지사이자 노동부 장관을 지낸 인물로, 보수 진영의 대표 주자로 출마를 선언했습니다. 경제 위기 극복과 노동 시장 개혁을 주요 공약으로 내세우고 있습니다.",
     "isActive": true,
+    "criminal_records": [
+      {
+        "date": "1980년대",
+        "charge": "국가보안법 위반",
+        "reason": "직선제 개헌 및 민주화 운동 과정에서 불법 집회 주도",
+        "sentence": "징역형(집행유예)"
+      },
+      {
+        "date": "2000년대",
+        "charge": "퇴거불응",
+        "reason": "노동운동 과정에서 불법 점거 농성 중 퇴거 명령 불응",
+        "sentence": "벌금형"
+      },
+      {
+        "date": "2020년대",
+        "charge": "감염병예방법 위반",
+        "reason": "코로나19 방역지침 위반 집회 개최(전광훈 목사 관련 집회 참석)",
+        "sentence": "벌금형"
+      }
+    ],
     "policy_reception": {
       "most_criticized": [
         {
@@ -419,6 +459,7 @@
     "image": "https://search.pstatic.net/common?type=n&size=174x232&quality=95&direct=true&src=https%3A%2F%2Felection.pstatic.net%2Fimage%2Fupload%2Fnep%2Fcandidate%2F2025%2F05%2F10%2F200006%2F100153689.JPG%3Ftype%3Dface_l_300_400%26cache%3D1",
     "color": "#FF8200",
     "description": "개혁신당 대표로, 국민의힘 전 대표이기도 합니다. 젊은 세대의 지지를 바탕으로 정치 개혁과 세대 교체를 주장하며 출마를 선언했습니다.",
+    "criminal_records": [],
     "policy_reception": {
       "most_criticized": [],
       "most_supported": []
@@ -607,6 +648,32 @@
     "color": "#FFCD1E",
     "description": "민주노동당 대표. 노동·사회적 약자 권익, 기후위기 대응, 평등사회 실현을 내세움.",
     "isActive": true,
+    "criminal_records": [
+      {
+        "date": "1990~2000년대",
+        "charge": "업무방해",
+        "reason": "노동 현장 파업 및 집회 과정에서 발생",
+        "sentence": "벌금형"
+      },
+      {
+        "date": "1990~2000년대",
+        "charge": "특수공무집행방해치상",
+        "reason": "노동운동 중 경찰과 충돌 과정에서 공무집행 방해 및 상해",
+        "sentence": "벌금형"
+      },
+      {
+        "date": "1990~2000년대",
+        "charge": "특수공무집행방해",
+        "reason": "노동운동 중 집회 과정에서 공무집행 방해",
+        "sentence": "벌금형"
+      },
+      {
+        "date": "1990~2000년대",
+        "charge": "법정소동",
+        "reason": "법정 내 시위 및 소란",
+        "sentence": "벌금형"
+      }
+    ],
     "categories": [
       {
         "id": "politics",
@@ -682,6 +749,7 @@
     "color": "#1C3D7A",
     "description": "자유통일당 후보. 강경 보수, 안보, 자유시장경제 강조.",
     "isActive": true,
+    "criminal_records": [],
     "categories": [
       {
         "id": "security",
@@ -728,6 +796,7 @@
     "color": "#808080",
     "description": "전 국무총리, 전 대통령 권한대행. 법치주의와 보수 가치 강조.",
     "isActive": true,
+    "criminal_records": [],
     "categories": [
       {
         "id": "politics",
@@ -777,6 +846,110 @@
     "color": "#808080",
     "description": "무소속 후보. 사회적 약자와 서민 정책에 집중.",
     "isActive": true,
+    "criminal_records": [
+      {
+        "date": "2001년",
+        "charge": "부정수표단속법 위반",
+        "reason": "부도수표 발행으로 처벌",
+        "sentence": "징역 10개월, 집행유예 2년"
+      },
+      {
+        "date": "2002년",
+        "charge": "사기",
+        "reason": "금전 편취로 처벌",
+        "sentence": "벌금 200만원"
+      },
+      {
+        "date": "2003년",
+        "charge": "사기",
+        "reason": "채무 불이행으로 처벌",
+        "sentence": "벌금 300만원"
+      },
+      {
+        "date": "2004년",
+        "charge": "사기",
+        "reason": "금전 편취로 처벌",
+        "sentence": "벌금 100만원"
+      },
+      {
+        "date": "2005년",
+        "charge": "사기 등",
+        "reason": "사기 및 관련 경제범죄로 처벌",
+        "sentence": "징역 1년 6개월, 집행유예 3년"
+      },
+      {
+        "date": "2006년",
+        "charge": "재물손괴",
+        "reason": "타인 재산 훼손으로 처벌",
+        "sentence": "벌금 300만원"
+      },
+      {
+        "date": "2007년",
+        "charge": "근로기준법 위반",
+        "reason": "임금 체불로 처벌",
+        "sentence": "벌금 300만원"
+      },
+      {
+        "date": "2008년",
+        "charge": "폭력행위등처벌에관한법률위반",
+        "reason": "폭력 행사로 처벌",
+        "sentence": "징역 10개월"
+      },
+      {
+        "date": "2009년",
+        "charge": "근로기준법 위반 등",
+        "reason": "임금 체불 및 기타 근로기준법 위반",
+        "sentence": "징역 6개월"
+      },
+      {
+        "date": "2010년",
+        "charge": "상해",
+        "reason": "타인에게 상해를 입혀 처벌",
+        "sentence": "벌금 100만원"
+      },
+      {
+        "date": "2011년",
+        "charge": "사기",
+        "reason": "금전 편취로 처벌",
+        "sentence": "징역 10개월"
+      },
+      {
+        "date": "2012년",
+        "charge": "사기",
+        "reason": "채무 불이행으로 처벌",
+        "sentence": "벌금 100만원"
+      },
+      {
+        "date": "2013년",
+        "charge": "근로기준법 위반",
+        "reason": "임금 체불로 처벌",
+        "sentence": "벌금 150만원"
+      },
+      {
+        "date": "2014년",
+        "charge": "사기",
+        "reason": "금전 편취로 처벌",
+        "sentence": "징역 3개월"
+      },
+      {
+        "date": "2015년",
+        "charge": "사기",
+        "reason": "채무 불이행으로 처벌",
+        "sentence": "징역 6개월"
+      },
+      {
+        "date": "2016년",
+        "charge": "사기",
+        "reason": "금전 편취로 처벌",
+        "sentence": "벌금 200만원"
+      },
+      {
+        "date": "2017년",
+        "charge": "특정경제범죄가중처벌법위반",
+        "reason": "경제범죄(사기·횡령 등)로 처벌",
+        "sentence": "징역 2년"
+      }
+    ],
     "categories": [
       {
         "id": "welfare",

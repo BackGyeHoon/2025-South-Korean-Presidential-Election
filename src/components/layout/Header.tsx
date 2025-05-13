@@ -45,6 +45,7 @@ const Header = () => {
           <NavLink to="/pledges">공약 안내</NavLink>
           <NavLink to="/comparison">후보자 비교</NavLink>
           <NavLink to="/candidate-assets">재산 내역</NavLink>
+          <NavLink to="/criminal-records">전과 기록</NavLink>
           <NavLink to="/policy-reception">공약 여론</NavLink>
           <NavLink to="/voting-info">투표 안내</NavLink>
         </nav>
@@ -80,6 +81,20 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 재산 내역
+              </Link>
+              <Link
+                to="/criminal-records"
+                className="py-2 border-b border-gray-100"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                전과 기록
+              </Link>
+              <Link
+                to="/policy-reception"
+                className="py-2 border-b border-gray-100"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                공약 여론
               </Link>
               <Link
                 to="/voting-info"

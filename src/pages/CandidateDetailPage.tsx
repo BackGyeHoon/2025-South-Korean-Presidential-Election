@@ -249,6 +249,61 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
               </div>
             </div>
 
+            {/* 단일화 정보 표시 */}
+            {candidate.unification &&
+              candidate.unification.isUnifiedCandidate && (
+                <div className="mb-3 p-3 bg-gray-50 rounded-lg border border-gray-200">
+                  <div className="flex items-center gap-2 mb-1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="text-primary"
+                    >
+                      <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                      <path d="M2 17l10 5 10-5" />
+                      <path d="M2 12l10 5 10-5" />
+                    </svg>
+                    <h3 className="font-semibold text-md">후보 단일화 정보</h3>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    {candidate.unification.unifiedWith.map(
+                      (unified: any, index: number) => (
+                        <div
+                          key={index}
+                          className="inline-flex items-center border-2 px-2 py-1 rounded-full text-sm"
+                          style={{ borderColor: candidate.color }}
+                        >
+                          <span className="mr-1 font-medium">
+                            {unified.name}
+                          </span>
+                          <span className="text-gray-600">
+                            ({unified.party})
+                          </span>
+                        </div>
+                      )
+                    )}
+                    <div className="inline-flex items-center text-sm text-gray-600">
+                      <span>
+                        {new Date(
+                          candidate.unification.unificationDate
+                        ).toLocaleDateString("ko-KR")}{" "}
+                        단일화
+                      </span>
+                    </div>
+                  </div>
+                  <p className="text-sm text-gray-700">
+                    {candidate.unification.unificationStatement}
+                  </p>
+                </div>
+              )}
+
             {details && (
               <div className="mb-4">
                 <p className="text-gray-600 mb-1">
@@ -297,6 +352,49 @@ const InfoCard: React.FC<InfoCardProps> = ({ title, items }) => {
             </li>
           ))}
         </ul>
+      </div>
+    </div>
+  );
+};
+
+// 전과 기록 카드 컴포넌트
+interface CriminalRecordsCardProps {
+  records?: Array<{
+    date: string;
+    charge: string;
+    reason: string;
+    sentence: string;
+  }>;
+}
+
+const CriminalRecordsCard: React.FC<CriminalRecordsCardProps> = ({
+  records,
+}) => {
+  return (
+    <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+      <div className="p-6">
+        <h2 className="text-xl font-bold mb-4 text-primary">전과 기록</h2>
+        {records && records.length > 0 ? (
+          <div className="space-y-4">
+            {records.map((record, index) => (
+              <div
+                key={index}
+                className="border-b border-gray-100 pb-4 last:border-b-0 last:pb-0"
+              >
+                <div className="flex flex-wrap items-center mb-2 gap-2">
+                  <span className="px-2 py-1 bg-red-50 text-red-700 rounded-md text-xs font-medium">
+                    {record.charge}
+                  </span>
+                  <span className="text-sm text-gray-500">{record.date}</span>
+                </div>
+                <p className="text-sm text-gray-700 mb-1">{record.reason}</p>
+                <p className="text-sm font-medium">선고: {record.sentence}</p>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="text-gray-700 italic">전과 기록이 없습니다.</p>
+        )}
       </div>
     </div>
   );
@@ -445,6 +543,11 @@ const CandidateDetailPage: React.FC = () => {
             />
           </div>
         )}
+
+        {/* 전과 기록 */}
+        <div className="mb-8">
+          <CriminalRecordsCard records={candidate.criminal_records} />
+        </div>
 
         {/* 주요 정책 및 공약 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

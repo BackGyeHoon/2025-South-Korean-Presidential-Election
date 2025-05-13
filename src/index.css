@@ -36,6 +36,25 @@
   .text-text-light {
     color: #8b95a1;
   }
+
+  /* 스크롤바 스타일 */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 10px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 10px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+  }
 }
 
 @keyframes scroll {
@@ -49,4 +68,135 @@
 
 .animate-scroll {
   animation: scroll 20s linear infinite;
+}
+
+/* 핀터레스트 스타일 (Masonry 레이아웃) */
+.break-inside-avoid {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+}
+
+/* Masonry 레이아웃 (핀터레스트 스타일) */
+.masonry-container {
+  column-gap: 1.5rem;
+  column-fill: auto; /* auto로 설정하여 더 빈틈없이 채우도록 함 */
+  width: 100%;
+  contain: content; /* 성능 최적화 */
+}
+
+/* 반응형 컬럼 설정 */
+@media screen and (min-width: 1024px) {
+  .masonry-container {
+    column-count: 3 !important;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1023px) {
+  .masonry-container {
+    column-count: 2 !important;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .masonry-container {
+    column-count: 1 !important;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid; /* 아이템이 컬럼에서 분리되지 않도록 함 */
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  width: 100%;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, opacity;
+  backface-visibility: hidden; /* 렌더링 성능 향상 */
+  transform: translateZ(0); /* 하드웨어 가속 활성화 */
+}
+
+.masonry-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.15),
+    0 4px 10px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* 기본 카드 컨테이너 스타일 */
+.criminal-cards-container {
+  -webkit-column-gap: 1.25rem;
+  -moz-column-gap: 1.25rem;
+  column-gap: 1.25rem;
+  column-fill: balance;
+}
+
+/* 카드 레이아웃을 위한 미디어 쿼리 */
+@media (min-width: 1280px) {
+  .criminal-cards-container {
+    columns: 3;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .criminal-cards-container {
+    columns: 3;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .criminal-cards-container {
+    columns: 2;
+  }
+}
+
+@media (max-width: 639px) {
+  .criminal-cards-container {
+    columns: 1;
+  }
+}
+
+@supports (grid-template-rows: masonry) {
+  .masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: masonry;
+    grid-gap: 1.5rem;
+  }
+}
+
+/* 페이드 인 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 그리드 컨테이너 스타일 */
+.grid-container {
+  display: grid;
+  grid-gap: 1.5rem;
+}
+
+.grid-item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+  backface-visibility: hidden;
+  contain: content;
+}
+
+.grid-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.15),
+    0 4px 10px -5px rgba(0, 0, 0, 0.1);
 }

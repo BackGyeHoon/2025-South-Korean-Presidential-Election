@@ -36,6 +36,27 @@ export type AdditionalPolicies = {
   [category: string]: string[];
 };
 
+// 단일화 관련 타입 정의
+export type UnifiedCandidate = {
+  name: string;
+  party: string;
+};
+
+export type Unification = {
+  isUnifiedCandidate: boolean;
+  unifiedWith: UnifiedCandidate[];
+  unificationDate: string;
+  unificationStatement: string;
+};
+
+// 전과 기록 타입 정의
+export type CriminalRecord = {
+  date: string;
+  charge: string;
+  reason: string;
+  sentence: string;
+};
+
 export type Candidate = {
   id: string;
   name: string;
@@ -47,6 +68,8 @@ export type Candidate = {
   additional_policies?: AdditionalPolicies;
   details?: CandidateDetails;
   isActive?: boolean; // 후보자의 활동 상태 (경선 탈락 여부)
+  unification?: Unification; // 단일화 정보
+  criminal_records?: CriminalRecord[]; // 전과 기록
 };
 
 // JSON 파일에서 불러온 데이터 타입 캐스팅

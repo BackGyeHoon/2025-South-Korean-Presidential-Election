@@ -10,6 +10,7 @@ import VotingInfoPage from "./pages/VotingInfoPage";
 import CandidateDetailPage from "./pages/CandidateDetailPage";
 import CandidateComparePage from "./pages/CandidateComparePage";
 import CandidateAssetsPage from "./pages/CandidateAssetsPage";
+import CriminalRecordsPage from "./pages/CriminalRecordsPage";
 import ScrollToTop from "./components/utils/ScrollToTop";
 import { Analytics } from "@vercel/analytics/react";
 import AnnouncementModal from "./components/ui/AnnouncementModal";
@@ -78,6 +79,10 @@ function App() {
               <Route
                 path="/policy-reception"
                 element={<PolicyReceptionPage />}
+              />
+              <Route
+                path="/criminal-records"
+                element={<CriminalRecordsPage />}
               />
             </Routes>
           </main>
